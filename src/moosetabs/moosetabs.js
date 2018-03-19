@@ -3,11 +3,10 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, CardTitle, CardText, 
 import classnames from 'classnames';
 import SitePopover from '../modal/modal.js';
 import "./moosetabs.css";
-import axios from "axios";
 
-const google = window.google;
-var map, infoWindow;
-var pos;
+// const google = window.google;
+// var map, infoWindow;
+// var pos;
 
 export default class MooseTabs extends React.Component {
     constructor(props) {
@@ -27,10 +26,6 @@ export default class MooseTabs extends React.Component {
                 activeTab: tab
             });
         }
-    }
-
-    calculateRoute() {
-
     }
 
     render() {
@@ -126,7 +121,7 @@ export default class MooseTabs extends React.Component {
                                             <li>$1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm - <SitePopover siteTitle="Pub 317" imgUrl="http://www.runtothepub.com/uploads/2/4/4/3/24437128/317-logo_orig.jpg" siteUrl="http://www.pub317.com/" /></li>
                                             <li>Doubles for Singles - 4-9pm - <SitePopover siteTitle="Bar IX" imgUrl="https://www.slamfestivals.org/wp-content/uploads/2015/08/Bar-IX-Montana-Logo-blank-back.jpg" siteUrl="http://bar-ix.com/" /></li>
                                         </div>
-                                        <div id='map' className="mappy">hey</div>
+                                        <div id='map' className="mappy"></div>
                                     </CardText>
                                 </Card>
                             </Col>
@@ -277,7 +272,7 @@ export default class MooseTabs extends React.Component {
                                 <Card body>
                                     <CardTitle>Saturday Specials</CardTitle>
                                     <CardText>
-                                        <li>$5 Mimosas & Bloody Mary's - <SitePopover siteTitle="The Cannery" siteDescription="Cannery info" imgUrl="http://webzoom.freewebs.com/thecanneryandburgerbobs/cannery%20logo1.jpg" siteUrl="http://thecanneryandburgerbobs.webs.com/" /></li>
+                                        <li>$5 Mimosas &amp; Bloody Mary's - <SitePopover siteTitle="The Cannery" siteDescription="Cannery info" imgUrl="http://webzoom.freewebs.com/thecanneryandburgerbobs/cannery%20logo1.jpg" siteUrl="http://thecanneryandburgerbobs.webs.com/" /></li>
                                         <li>Live Music and Assorted Drink Specials - 7:30-10pm  -  <SitePopover siteTitle="Montana Ted's" imgUrl="https://media-cdn.tripadvisor.com/media/photo-s/06/3f/93/56/ted-s-montana-grill.jpg" siteUrl="https://www.tedsmontanagrill.com/" /></li>
                                         <li>$2.50-$3 Pints, $3 Long Island Iced Teas, $4 Bahama Mamas and Margaritas, $4.99 Appetizers 4-6pm 9-close - <SitePopover siteTitle="Applebee's" imgUrl="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Applebee%27s.svg/1200px-Applebee%27s.svg.png" siteUrl="https://www.applebees.com/en" /></li>
                                         <li>$1 Off pints from 4-7pm - <SitePopover siteTitle="Neptunes" imgUrl="https://s-media-cache-ak0.pinimg.com/originals/59/8d/f5/598df5e196d071cf5478e31c9056465a.jpg" siteUrl="http://neptunesbrewery.com/" /></li>

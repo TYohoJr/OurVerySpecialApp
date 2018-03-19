@@ -27,9 +27,9 @@ export default class App extends Component {
       tncSubscribe: "",
       heebsSubscribe: "",
       davesSubscribe: "",
-      fillingSubscribe:"",
-      zebraSubscribe:"",
-      rialtoSubscribe:"",
+      fillingSubscribe: "",
+      zebraSubscribe: "",
+      rialtoSubscribe: "",
       userProfile: ""
     }
   }
@@ -37,19 +37,21 @@ export default class App extends Component {
   sendTnCText() {
     axios.post("/textTnC", { username: this.state.username, number: this.state.number, token: localStorage.getItem("token") }).then((result) => {
       console.log(result.data)
-      this.setState({
-        tncSubscribe: result.data.tncSubscribe,
-        userProfile:
-          <div id="profile-box">
-            <p><div className="profile-base-text">Username: </div>{this.state.username}</p>
-            <p><div className="profile-base-text">Number: </div>{result.data.number}</p>
-            <p><div className="profile-base-text">Your Subscriptions:</div></p><p className="profile-subs">{result.data.tncSubscribe}</p>
-            <p className="profile-subs">{result.data.heebsSubscribe}</p><p className="profile-subs">{result.data.davesSubscribe}</p>
-            <p className="profile-subs">{result.data.fillingSubscribe}</p><p className="profile-subs">{result.data.zebraSubscribe}</p>
-            <p className="profile-subs">{result.data.rialtoSubscribe}</p>            <button id="test-sms" className="profile-buttons" onClick={this.testSms}>Test SMS</button>
-            <button id="stop-sms" className="profile-buttons" onClick={this.stopSms}>Stop All SMS</button>
-          </div>
-      })
+      if (result.data.number) {
+        this.setState({
+          tncSubscribe: result.data.tncSubscribe,
+          userProfile:
+            <div id="profile-box">
+              <p><div className="profile-base-text">Username: </div>{this.state.username}</p>
+              <p><div className="profile-base-text">Number: </div>{result.data.number}</p>
+              <p><div className="profile-base-text">Your Subscriptions:</div></p><p className="profile-subs">{result.data.tncSubscribe}</p>
+              <p className="profile-subs">{result.data.heebsSubscribe}</p><p className="profile-subs">{result.data.davesSubscribe}</p>
+              <p className="profile-subs">{result.data.fillingSubscribe}</p><p className="profile-subs">{result.data.zebraSubscribe}</p>
+              <p className="profile-subs">{result.data.rialtoSubscribe}</p>            <button id="test-sms" className="profile-buttons" onClick={this.testSms}>Test SMS</button>
+              <button id="stop-sms" className="profile-buttons" onClick={this.stopSms}>Stop All SMS</button>
+            </div>
+        })
+      }
     })
   }
 
@@ -236,8 +238,8 @@ export default class App extends Component {
         {this.state.userWelcome}
         <div id="page-header">
         </div>
-        <Tabs sendTnCText={this.sendTnCText} sendHeebsText={this.sendHeebsText} sendDavesText={this.sendDavesText} 
-        sendFillingText={this.sendFillingText} sendZebraText={this.sendZebraText} sendRialtoText={this.sendRialtoText}/>
+        <Tabs sendTnCText={this.sendTnCText} sendHeebsText={this.sendHeebsText} sendDavesText={this.sendDavesText}
+          sendFillingText={this.sendFillingText} sendZebraText={this.sendZebraText} sendRialtoText={this.sendRialtoText} />
       </div>
     );
   }

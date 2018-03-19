@@ -13,18 +13,18 @@
     background-color: #ffffff!important;
 }
 
+#dropdown-menu.show {
+    background-color: #ffffff!important;
+}
+
 #navbar-dropdown {
-    -right: 30px;
     background-color:#343a40!important;
     color: #ffffff!important;
+    margin-right: 10px;
 }
 
 #navbar-dropdown:hover {
     font-style: normal!important;
-}
-
-.dropdown-item:hover {
-    background-color: #8ca3a3!important;
 }
 
 .dropdown-toggle.show {
