@@ -109,23 +109,23 @@ export default class Tabs extends React.Component {
                     <tr>
                       <th>
                         <div>
-                          <button id="fillingStationBtn" className="tabsBtns" onClick={this.props.sendFillingText}><img className="tncBtns" onClick={this.props.sendTnCText} src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
+                          <button id="fillingSmsBtn" className="tabsBtns" onClick={this.props.sendFillingText}><img className="tncBtns" onClick={this.props.sendTnCText} src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
                           <a href="https://www.google.com/maps/place/Filling+Station+VFW/@45.7347721,-111.2473871,12z/data=!4m8!1m2!2m1!1sfilling+station+bozeman+website!3m4!1s0x534544141d981605:0x7e21f1397f2a54ad!8m2!3d45.6988202!4d-111.0319631" target="_blank" rel="noopener noreferrer" ><button id="tncSiteBtn" className="tabsBtns"><img className="tncBtns" src={require("../project-images/directions.jpg")} alt="site" />Directions</button></a>
-                          <a href="https://www.yelp.com/biz/daves-sushi-bozeman-2" target="_blank" rel="noopener noreferrer"><button id="tncReviewBtn" className="tabsBtns"><img className="tncBtns" src={require("../project-images/review.png")} alt="review" />Reviews</button></a>
+                          <a href="http://www.bozemanevents.net/FillingStation" target="_blank" rel="noopener noreferrer"><button id="tncReviewBtn" className="tabsBtns"><img className="tncBtns" src={require("../project-images/music.png")} alt="review" />Events</button></a>
                         </div>
                       </th>
                       <th>
                         <div>
-                          <button id="davesSmsBtn" className="tabsBtns" onClick={this.props.sendZebraText}><img className="davesBtns" src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
+                          <button id="zebraSmsBtn" className="tabsBtns" onClick={this.props.sendZebraText}><img className="davesBtns" src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
                           <a href="https://www.google.com/maps/place/Zebra+Cocktail+Lounge/@45.6795986,-111.0343792,17z/data=!3m1!4b1!4m5!3m4!1s0x5345445bdc5128ad:0xc9f5c1cf4ae40604!8m2!3d45.6795949!4d-111.0321905" target="_blank" rel="noopener noreferrer"><button id="heebsSiteBtn" className="tabsBtns"><img className="heebsBtns" src={require("../project-images/directions.jpg")} alt="site" />Directions</button></a>
-                          <a href="https://www.yelp.com/biz/heebs-east-main-grocery-bozeman" target="_blank" rel="noopener noreferrer"><button id="heebsReviewBtn" className="tabsBtns"><img className="heebsBtns" src={require("../project-images/review.png")} alt="review" />Reviews</button></a>
+                          <a href="http://www.bozemanevents.net/Zebra" target="_blank" rel="noopener noreferrer"><button id="heebsReviewBtn" className="tabsBtns"><img className="heebsBtns" src={require("../project-images/music.png")} alt="review" />Events</button></a>
                         </div>
                       </th>
                       <th>
                         <div>
-                          <button id="davesSmsBtn" className="tabsBtns" onClick={this.props.sendRialtoText}><img className="davesBtns" src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
+                          <button id="rialtoSmsBtn" className="tabsBtns" onClick={this.props.sendRialtoText}><img className="davesBtns" src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
                           <a href="https://www.google.com/maps/place/Rialto+Bozeman/@45.6791062,-111.039787,17z/data=!3m1!4b1!4m5!3m4!1s0x53454450a6bce6af:0x3c24d92cd60d2212!8m2!3d45.6791025!4d-111.0375983" target="_blank" rel="noopener noreferrer"><button id="davesSiteBtn" className="tabsBtns"><img className="davesBtns" src={require("../project-images/directions.jpg")} alt="site" />Directions</button></a>
-                          <a href="https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country" target="_blank" rel="noopener noreferrer"><button id="davesReviewBtn" className="tabsBtns"><img className="davesBtns" src={require("../project-images/review.png")} alt="review" />Reviews</button></a>
+                          <a href="https://rialtobozeman.ticketfly.com/" target="_blank" rel="noopener noreferrer"><button id="davesReviewBtn" className="tabsBtns"><img className="davesBtns" src={require("../project-images/music.png")} alt="review" />Events</button></a>
                         </div>
                       </th>
                     </tr>

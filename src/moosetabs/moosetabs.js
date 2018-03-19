@@ -8,37 +8,17 @@ import axios from "axios";
 const google = window.google;
 var map, infoWindow;
 var pos;
-var promise1;
 
 export default class MooseTabs extends React.Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
-        this.calculateRoute = this.calculateRoute.bind(this);
-        this.calculateAndDisplayRoute = this.calculateAndDisplayRoute.bind(this);
-        this.directionsService = new google.maps.DirectionsService();
-        this.directionsDisplay = new google.maps.DirectionsRenderer();
-        this.getLatLng = this.getLatLng.bind(this);
 
         this.state = {
             activeTab: '1',
             work: "",
             myLatLng: ""
         };
-    }
-
-    calculateAndDisplayRoute(directionsService, directionsDisplay) {
-        directionsService.route({
-            origin: this.state.myLatLng,
-            destination: "albertsons bozeman",
-            travelMode: 'DRIVING'
-        }, function (response, status) {
-            if (status === 'OK') {
-                directionsDisplay.setDirections(response);
-            } else {
-                window.alert('Directions request failed due to ' + status);
-            }
-        });
     }
 
     toggle(tab) {
@@ -49,68 +29,13 @@ export default class MooseTabs extends React.Component {
         }
     }
 
-    getLatLng() {
-        axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=bozeman+montana&key=AIzaSyC_0EOflrvI8I4KszxAbOTlS85G4RAAyWk").then((result) => {
-            console.log(result.data.results[0].geometry.location.lat)
-            this.setState({
-                myLatLng: { lat: result.data.results[0].geometry.location.lat, lng: result.data.results[0].geometry.location.lng }
-            })
-        })
-    }
-
     calculateRoute() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: this.state.myLatLng,
-            zoom: 12
-        });
 
-        var marker = new google.maps.Marker({
-            position: this.state.myLatLng,
-            map: map,
-            title: 'Hello World!'
-        });
-
-        // map = new google.maps.Map(document.getElementById('map'), {
-        //     center: "bozeman, mt",
-        //     zoom: 12
-        // });
-        // infoWindow = new google.maps.InfoWindow;
-
-        // // Try HTML5 geolocation.
-        // if (navigator.geolocation) {
-        //     navigator.geolocation.getCurrentPosition(function (position) {
-        //         var pos = {
-        //             lat: position.coords.latitude,
-        //             lng: position.coords.longitude
-        //         };
-
-        //         infoWindow.setPosition(pos);
-        //         infoWindow.setContent('Location found.');
-        //         infoWindow.open(map);
-        //         map.setCenter(pos);
-        //     }, function () {
-        //         handleLocationError(true, infoWindow, map.getCenter());
-        //     });
-        // } else {
-        //     // Browser doesn't support Geolocation
-        //     handleLocationError(false, infoWindow, map.getCenter());
-        // }
-
-
-        // function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        //     infoWindow.setPosition(pos);
-        //     infoWindow.setContent(browserHasGeolocation ?
-        //         'Error: The Geolocation service failed.' :
-        //         'Error: Your browser doesn\'t support geolocation.');
-        //     infoWindow.open(map);
-        // }
     }
 
     render() {
-
         return (
             <div id="moosetabs-div">
-                <button onClick={this.getLatLng}>get lat lng</button>
                 <Nav tabs>
                     <NavItem>
                         <NavLink
