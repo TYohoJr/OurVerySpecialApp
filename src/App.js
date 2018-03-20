@@ -20,6 +20,8 @@ export default class App extends Component {
     this.sendFillingText = this.sendFillingText.bind(this);
     this.sendZebraText = this.sendZebraText.bind(this);
     this.sendRialtoText = this.sendRialtoText.bind(this);
+    this.addListItem = this.addListItem.bind(this);
+    this.removeListItem = this.removeListItem.bind(this);
     this.state = {
       number: "",
       password: "",
@@ -30,8 +32,37 @@ export default class App extends Component {
       fillingSubscribe: "",
       zebraSubscribe: "",
       rialtoSubscribe: "",
-      userProfile: ""
+      userProfile: "",
+      userList: "",
     }
+  }
+
+  addListItem(item) {
+    axios.post("/sendListItem", { item: item.props.children, token: localStorage.getItem("token"), number: this.state.number }).then((result) => {
+      console.log(result.data.item)
+      this.setState({
+        userList: result.data.item[0].items.map((item, index) => {
+          var somelist = <div>
+            <li>{item}</li>
+          </div>
+          return somelist
+        })
+      })
+    })
+  }
+
+  removeListItem(item) {
+    axios.post("/removeListItem", { item: item.props.children, token: localStorage.getItem("token"), number: this.state.number }).then((result) => {
+      console.log(result.data.item)
+      this.setState({
+        userList: result.data.item[0].items.map((item, index) => {
+          var somelist = <div>
+            <li>{item}</li>
+          </div>
+          return somelist
+        })
+      })
+    })
   }
 
   sendTnCText() {
@@ -56,6 +87,7 @@ export default class App extends Component {
   }
 
   sendHeebsText() {
+    debugger;
     axios.post("/textHeebs", { username: this.state.username, number: this.state.number, token: localStorage.getItem("token") }).then((result) => {
       console.log(result.data)
       this.setState({
@@ -163,6 +195,12 @@ export default class App extends Component {
           tncSubscribe: result.data.tncSubscribe,
           heebsSubscribe: result.data.heebsSubscribe,
           davesSubscribe: result.data.davesSubscribe,
+          userList: result.data.item[0].items.map((item, index) => {
+            var somelist = <div>
+              <li>{item}</li>
+            </div>
+            return somelist
+          }),
           userProfile:
             <div id="profile-box">
               <p><div className="profile-base-text">Username: </div>{this.state.username}</p>
@@ -236,10 +274,11 @@ export default class App extends Component {
           modal={this.state.modal} stopSms={this.stopSms} tncSubscribe={this.state.tncSubscribe} heebsSubscribe={this.state.heebsSubscribe}
           davesSubscribe={this.state.davesSubscribe} userProfile={this.state.userProfile} number={this.state.number} />
         {this.state.userWelcome}
-        <div id="page-header">
-        </div>
-        <Tabs sendTnCText={this.sendTnCText} sendHeebsText={this.sendHeebsText} sendDavesText={this.sendDavesText}
-          sendFillingText={this.sendFillingText} sendZebraText={this.sendZebraText} sendRialtoText={this.sendRialtoText} />
+        {/* <div id="page-header">
+        </div> */}
+        <Tabs id="main-tabs-div" sendTnCText={this.sendTnCText} sendHeebsText={this.sendHeebsText} sendDavesText={this.sendDavesText}
+          sendFillingText={this.sendFillingText} sendZebraText={this.sendZebraText} sendRialtoText={this.sendRialtoText}
+          addListItem={this.addListItem} userList={this.state.userList} removeListItem={this.removeListItem} />
       </div>
     );
   }

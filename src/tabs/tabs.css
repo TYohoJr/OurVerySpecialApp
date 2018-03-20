@@ -15,7 +15,7 @@
 }
 
 .active.nav-link {
-    background: #261cacbd!important;
+    background-color: rgb(61, 189, 221)!important;
     color: white!important;
 }
 
@@ -79,7 +79,6 @@
 
 #tabs {
     text-align: center;
-    /* font-family: 'Raleway', sans-serif; */
     text-shadow: 2px 2px 10px black;
 }
 

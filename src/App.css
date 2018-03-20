@@ -89,3 +89,7 @@ input {
 .navbar-light .navbar-nav .nav-link {
   color: white!important;
 }
+
+#main-tabs-div {
+  background-color: blueviolet
+}

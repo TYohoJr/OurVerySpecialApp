@@ -1,10 +1,8 @@
-/* a:not([href]):not([tabindex]) {
-    color: white!important;
-    background-color: rgba(98, 98, 98, 0.507)
-} */
-
 li {
-    padding: 10px!important
+    padding: 10px!important;
+    font-size: 16px;
+    background-color: rgb(98, 98, 98);
+    color: rgb(255, 255, 255)
 }
 
 .card-body {
@@ -18,7 +16,6 @@ li {
 
 }
 
-/* #map {
-    width: 30vw;
-    height: 30vw;
-} */
+.nav-link.active {
+    text-shadow: 2px 2px 10px black;
+}

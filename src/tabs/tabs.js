@@ -149,7 +149,7 @@ export default class Tabs extends React.Component {
               <Col sm="12">
                 <Table>
                   <div id="MooseTabs-div">
-                    <MooseTabs />
+                    <MooseTabs addListItem={this.props.addListItem} userList={this.props.userList} removeListItem={this.props.removeListItem}/>
                   </div>
                 </Table>
               </Col>
