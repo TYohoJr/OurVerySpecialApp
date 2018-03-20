@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import "./tabs.css";
 import { Table } from 'reactstrap';
 // import Photos from "../photos/photos.js";
+import FoodButton from "../FoodButton/FoodButton";
 import MooseTabs from "../moosetabs/moosetabs.js";
 
 export default class Tabs extends React.Component {
@@ -25,9 +26,16 @@ export default class Tabs extends React.Component {
   }
 
   render() {
+    let foodButtons = this.props.places.map((p, i)=>{
+      return (
+        <th key={i}>
+         <FoodButton subscribeToPlace={this.props.subscribeToPlace} place={p}/>
+        </th>
+      )
+    });
+
     return (
       <div>
-
         <Nav id="tabs" tabs>
           <NavItem className="nav-item1">
             <NavLink
@@ -61,27 +69,7 @@ export default class Tabs extends React.Component {
                 <Table className="table1">
                   <thead>
                     <tr>
-                      <th>
-                        <div>
-                          <button id="tncSmsBtn" className="tabsBtns" onClick={this.props.sendTnCText}><img className="tncBtns" onClick={this.props.sendTnCText} src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
-                          <a href="http://tncfoods.com/" target="_blank" rel="noopener noreferrer" ><button id="tncSiteBtn" className="tabsBtns"><img className="tncBtns" src={require("../project-images/site.png")} alt="site" />Website</button></a>
-                          <a href="https://www.yelp.com/biz/daves-sushi-bozeman-2" target="_blank" rel="noopener noreferrer"><button id="tncReviewBtn" className="tabsBtns"><img className="tncBtns" src={require("../project-images/review.png")} alt="review" />Reviews</button></a>
-                        </div>
-                      </th>
-                      <th>
-                        <div>
-                          <button id="heebsSmsBtn" className="tabsBtns" onClick={this.props.sendHeebsText}><img className="heebsBtns" src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
-                          <a href="http://heebsgrocery.com/" target="_blank" rel="noopener noreferrer"><button id="heebsSiteBtn" className="tabsBtns"><img className="heebsBtns" src={require("../project-images/site.png")} alt="site" />Website</button></a>
-                          <a href="https://www.yelp.com/biz/heebs-east-main-grocery-bozeman" target="_blank" rel="noopener noreferrer"><button id="heebsReviewBtn" className="tabsBtns"><img className="heebsBtns" src={require("../project-images/review.png")} alt="review" />Reviews</button></a>
-                        </div>
-                      </th>
-                      <th>
-                        <div>
-                          <button id="davesSmsBtn" className="tabsBtns" onClick={this.props.sendDavesText}><img className="davesBtns" src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
-                          <a href="http://www.daves-sushi.com" target="_blank" rel="noopener noreferrer"><button id="davesSiteBtn" className="tabsBtns"><img className="davesBtns" src={require("../project-images/site.png")} alt="site" />Website</button></a>
-                          <a href="https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country" target="_blank" rel="noopener noreferrer"><button id="davesReviewBtn" className="tabsBtns"><img className="davesBtns" src={require("../project-images/review.png")} alt="review" />Reviews</button></a>
-                        </div>
-                      </th>
+                     {foodButtons}
                     </tr>
                   </thead>
                   <tbody>
@@ -109,7 +97,7 @@ export default class Tabs extends React.Component {
                     <tr>
                       <th>
                         <div>
-                          <button id="fillingSmsBtn" className="tabsBtns" onClick={this.props.sendFillingText}><img className="tncBtns" onClick={this.props.sendTnCText} src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
+                          <button id="fillingSmsBtn" className="tabsBtns" onClick={this.props.sendFillingText}><img className="tncBtns" src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
                           <a href="https://www.google.com/maps/place/Filling+Station+VFW/@45.7347721,-111.2473871,12z/data=!4m8!1m2!2m1!1sfilling+station+bozeman+website!3m4!1s0x534544141d981605:0x7e21f1397f2a54ad!8m2!3d45.6988202!4d-111.0319631" target="_blank" rel="noopener noreferrer" ><button id="tncSiteBtn" className="tabsBtns"><img className="tncBtns" src={require("../project-images/directions.jpg")} alt="site" />Directions</button></a>
                           <a href="http://www.bozemanevents.net/FillingStation" target="_blank" rel="noopener noreferrer"><button id="tncReviewBtn" className="tabsBtns"><img className="tncBtns" src={require("../project-images/music.png")} alt="review" />Events</button></a>
                         </div>
@@ -147,11 +135,12 @@ export default class Tabs extends React.Component {
           <TabPane tabId="3">
             <Row>
               <Col sm="12">
-                <Table>
-                  <div id="MooseTabs-div">
-                    <MooseTabs addListItem={this.props.addListItem} userList={this.props.userList} removeListItem={this.props.removeListItem}/>
-                  </div>
-                </Table>
+                {/* <Table> */}
+                  {/* <div id="MooseTabs-div"> */}
+                  
+                    <MooseTabs id="MooseTabs-div" addListItem={this.props.addListItem} userList={this.props.userList} removeListItem={this.props.removeListItem}/>
+                  {/* </div> */}
+                {/* </Table> */}
               </Col>
             </Row>
           </TabPane>

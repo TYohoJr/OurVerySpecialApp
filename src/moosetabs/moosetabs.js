@@ -8,12 +8,12 @@ import Userlist from "../userlist/userlist.js";
 import ListArray from "../listarray/listarray.js"
 
 var everyWeekDay = [
-   <p> $2 Wells and domestics 5-7pm - The Crystal</p>, 
-   <p> $2.75 Domestics, $2.75 Wells, $2.25 PBR Cans 4-7pm - The Legion</p>,
-   <p>$2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 4-7pm - Old Chicago</p>,
-   <p>Sushi/Appetizer and Drink Happy Hour - Seven Sushi</p>,
-   <p>$1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm - Pub 317</p>,
-   <p>Doubles for Singles - 4-9pm - Bar IX</p>,
+   <div> $2 Wells and domestics 5-7pm - The Crystal</div>, 
+   <div> $2.75 Domestics, $2.75 Wells, $2.25 PBR Cans 4-7pm - The Legion</div>,
+   <div>$2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 4-7pm - Old Chicago</div>,
+   <div>Sushi/Appetizer and Drink Happy Hour - Seven Sushi</div>,
+   <div>$1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm - Pub 317</div>,
+   <div>Doubles for Singles - 4-9pm - Bar IX</div>,
 
 ]
 

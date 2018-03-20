@@ -42,8 +42,7 @@ export default class Navbar2 extends React.Component {
     return (
       <div>
         <Navbar id="navbar-main" color="faded" light expand="md" className="w3-animate-left">
-          <Profile tncSubscribe={this.props.tncSubscribe} heebsSubscribe={this.props.heebsSubscribe}
-            davesSubscribe={this.props.davesSubscribe} stopSms={this.props.stopSms} userProfile={this.props.userProfile} />
+          <Profile stopSms={this.props.stopSms} userProfile={this.props.userProfile} />
           <NavbarToggler onClick={this.toggle} number={this.props.number} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav id="navbar-buttons" className="ml-auto" navbar>
@@ -59,11 +58,11 @@ export default class Navbar2 extends React.Component {
                     Sign in/up
                 </DropdownToggle>
                   <DropdownMenu id="dropdown-menu">
-                    <DropdownItem className="dropdown-item">
+                    <div className="dropdown-item">
                       <Signin sendSms={this.props.sendSms} signIn={this.props.signIn} onPasswordChange={this.props.onPasswordChange}
                         onUserChange={this.props.onUserChange} username={this.props.username} password={this.props.password}
                         toggle={this.props.toggle} modal={this.props.modal} stopSms={this.props.stopSms} />
-                    </DropdownItem>
+                    </div>
                     <DropdownItem>
                       <Signup />
                     </DropdownItem>
