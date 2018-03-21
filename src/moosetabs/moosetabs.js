@@ -7,23 +7,116 @@ import Userlist from "../userlist/userlist.js";
 import ListArray from "../listarray/listarray.js"
 
 var everyWeekDay = [
-   <div> $2 Wells and domestics 5-7pm - The Crystal</div>, 
-   <div> $2.75 Domestics, $2.75 Wells, $2.25 PBR Cans 4-7pm - The Legion</div>,
-   <div>$2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 4-7pm - Old Chicago</div>,
-   <div>Sushi/Appetizer and Drink Happy Hour - Seven Sushi</div>,
-   <div>$1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm - Pub 317</div>,
-   <div>Doubles for Singles - 4-9pm - Bar IX</div>,
+    <div className='everyweekday'>The Crystal: $2 Wells and domestics 5-7pm</div>,
+    <div className='everyweekday'>The Legion: $2.75 Domestics, $2.75 Wells, $2.25 PBR Cans 4-7pm</div>,
+    <div className='everyweekday'>Old Chicago: $2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 4-7pm</div>,
+    <div className='everyweekday'>Seven Sushi: Sushi/Appetizer and Drink Happy Hour</div>,
+    <div className='everyweekday'>Pub 317: $1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm</div>,
+    <div className='everyweekday'>Bar IX: Doubles for Singles - 4-9pm</div>,
 ]
 
 var everyDay = [
-    <div></div>, 
-    <div> $2.75 Domestics, $2.75 Wells, $2.25 PBR Cans 4-7pm - The Legion</div>,
-    <div>$2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 4-7pm - Old Chicago</div>,
-    <div>Sushi/Appetizer and Drink Happy Hour - Seven Sushi</div>,
-    <div>$1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm - Pub 317</div>,
-    <div>Doubles for Singles - 4-9pm - Bar IX</div>,
- ]
- 
+    <div className='everyDay'>The Legion: $2 PBR or Black Velvet</div>,
+    <div className='everyDay'>The Crystal: $2 Bud and Bud Light cans</div>,
+    <div className='everyDay'>The Crystal: $2 Rainier Cans and Bottles</div>,
+    <div className='everyDay'>The Crystal: $1.75 Oly and PBR</div>,
+    <div className='everyDay'>The Crystal: $2 Pacifico and Corona</div>,
+    <div className='everyDay'>Cat's Paw: $3 Grey Goose and $2 Fire Ball Shots and rotating beer specials (Current special, changes from time to time)</div>,
+    <div className='everyDay'>Baja Fresh: $8 Bucket of 5 Coronas</div>,
+    <div className='everyDay'>Mixers: $2 Jack</div>,
+    <div className='everyDay'>Mixers: $2 Drafts, wells and domestics and 2 for 1 appetizers - 4-7pm</div>,
+    <div className='everyDay'>Neptunes: $3 Pints</div>,
+    <div className='everyDay'>The Bay: $4 Long Island Iced Teas, $5 Margaritas, $5 Mai Thais, $3 Draft Beers, $4 23oz draft beer, $4 Pork Carnitas, $5 Beef Sliders, $5 Shrimp Cocktail - 4-6pm</div>,
+    <div className='everyDay'>The Eagles: $1.50 Beer Special</div>,
+    <div className='everyDay'>Bar IX: Free Ski Pass To Bridger Bowl if you blow the keg</div>,
+    <div className='everyDay'>Johnny Carino's: Happy Hour 3pm - 5pm</div>,
+]
+
+var monday = [
+    <div className='mon'>The Cannery: $8 Cannary Calypso Cooler  </div>,
+    <div className='mon'>The Crystal Bar: $1.75 Millers </div>,
+    <div className='mon'>Plonk: Service Industry Night  </div>,
+    <div className='mon'>Mixers: 2 for 1 Long Island Iced Teas </div>,
+    <div className='mon'>Neptunes: 4-7pm $6 Growler refills </div>,
+    <div className='mon'>The Pour House: 1/2 Price Nachos and $10 for 5 Bud lights</div>,
+    <div className='mon'>Spectators: $2.25 Drafts</div>,
+    <div className='mon'>Bar IX:  18 Boneless Wings and a pitcher of beer</div>,
+    <div className='mon'>Carinos: 1/2 off Family Platters </div>,
+    <div className='mon'>Carinos: 3-5pm and 8-close Happy Hour!  </div>,
+]
+
+var tuesday = [
+    <div className='tues'>The Cannery: $6 Sauza Margaritas </div>,
+    <div className='tues'>Neptunes:  4-7pm $1 Off pints </div>,
+    <div className='tues'>Pour House: $2 Coronas</div>,
+    <div className='tues'>Spectators: Tonic Tuesday $2.50 Vodka/Gin and tonic $3.75 doubles</div>,
+    <div className='tues'>Spectators: $7.95 Half-pound burger and pint of beer   </div>,
+    <div className='tues'>The Rocking R: 5-9pm $2 Olympia, $1 Kamikazes</div>,
+    <div className='tues'>Carinos: Free pitcher of beer with an order of ribs </div>,
+    <div className='tues'>Carinos: 3-5 and 8-close Happy Hour! </div>,
+]
+
+var wednesday = [
+    <div className='weds'>The Cannery: 50-cent Wing Wednesday with purchase of any whiskey drink or cocktail </div>,
+    <div className='weds'>The Crystal: Whiskey Wednesday 10am-4pm $1.50 Ten-High Whiskey</div>,
+    <div className='weds'>The Crystal: 5-8pm $5 Burger Beer and Chips</div>,
+    <div className='weds'>Plonk: Free Live Jazz Music</div>,
+    <div className='weds'>Old Chicago: $1 off all new beers added to WBT (up to four beers)</div>,
+    <div className='weds'>Mixers: Wild West Wednesday Dancing and a Country DJ: 8pm-close, $2 Jack, Bud Light Platinum and Draft Beer </div>,
+    <div className='weds'>Neptunes: 4-7pm $1 Off pints from </div>,
+    <div className='weds'>Carinos: 1/2 off all bottles of wine </div>,
+    <div className='weds'>Carinos: 3-5 and 8-close Happy Hour! </div>,
+]
+
+var thursday = [
+    <div className ='thurs'> The Cannery: $5 Stoli Martinis and single ladies get first drink free! - Ladies Night</div>,
+    <div className ='thurs'> The Crystal: 2 for 1 Top Shelf Thursday - 8-11pm - </div>,
+    <div className ='thurs'> Old Chicago: 8-10pm $1.25 Pizza Slices and PBR</div>,
+    <div className ='thurs'> Cat's Paw: $2 Pints ></div>,
+    <div className ='thurs'> Neptunes: 4-7pm $1 Off  </div>,
+    <div className ='thurs'> The Pour House: $3 Stoli</div>,
+    <div className ='thurs'> Spectators: $2.5 Stolli singles $3.75 doubles </div>,
+    <div className ='thurs'> Spectators: 5-close 19.95 17 inch Pizza and pitcher of beer </div>,
+    <div className ='thurs'> Bar IX: 9-close, $10 Pitcher of you favorite cocktail </div>,
+    <div className ='thurs'> Carinos: 3-5 and 8-close Happy Hour! </div>
+
+]
+
+var friday = [
+    <div className='fri'>The Cannery: Free appetizers and $3 Draft Bud Light and PBR</div>,
+    <div className='fri'>Montana Ted's: Live Music and Assorted Drink Specials - 7:30-10pm</div>,
+    <div className='fri'>Applebee's: $2.50-$3 Pints, $3 Long Island Iced Teas, $4 Bahama Mamas and Margaritas, $4.99 Appetizers 9-close</div>,
+    <div className='fri'>Mixers: $2 Premium Whiskey - Whiskey Friday - 9-11pm</div>,
+    <div className='fri'>Neptunes: $1 Off pints from 4-7pm</div>,
+    <div className='fri'>The Pour House: $3 Jameson</div>,
+    <div className='fri'>Spectators: $2 Twisted Teas, $3 Jager Bombs</div>,
+    <div className='fri'>Spectators: $12.75 12 Wings and a pitcher of beer - 5 - close</div>,
+    <div className='fri'>Johnny Carino's: $24.99 Dinner for Two - 2 Chef Select entrees, unlimited tuscan bread, soup or sald, and any two mini desserts</div>,
+    <div className='fri'>Johnny Carino's: Happy Hour 3pm - 5pm and 9pm - Close</div>,
+]
+
+var saturday = [
+    <div className='sat'>The Cannery: $5 Mimosas &amp; Bloody Mary's</div>,
+    <div className='sat'>Montana Teds: Live Music and Assorted Drink Specials - 7:30-10pm</div>,
+    <div className='sat'>Applebees's: $2.50-$3 Pints, $3 Long Island Iced Teas, $4 Bahama Mamas and Margaritas, $4.99 Appetizers 4-6pm 9-close</div>,
+    <div className='sat'>Neptunes: $1 Off pints from 4-7pm</div>,
+    <div className='sat'>The Pour House: 50-cent wings, $3 Draft Beer</div>,
+    <div className='sat'>Bar IX: Doubles for singles - 4-9pm</div>,
+    <div className='sat'>Johnny Carino's: $24.99 Dinner for Two - 2 Chef Select entrees, unlimited tuscan bread, soup or sald, and any two mini desserts</div>,
+    <div className='sat'>Johnny Carino's: Happy Hour 3pm to 5pm and 9pm to Close</div>,
+]
+
+var sunday = [
+    <div className='sun'>The Cannery: $1 Beef or Chicken Sliders with purchase of a pitcher of beer</div>,
+    <div className='sun'>Old Chicago: $2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 7-10pm</div>,
+    <div className='sun'>Cafe Zydeco: $5 Coffee and 4 Beignets</div>,
+    <div className='sun'>Cat's Paw: $5.75 Chicken Fried Steak Hashed Browns and Toast</div>,
+    <div className='sun'>Pour House: $2 Sliders, Bottomless Mimosa</div>,
+    <div className='sun'>Bar IX: 2 for 1 all day</div>,
+    <div className='sun'>Johnny Carino's: Kids 10 and under eat free with purchase of adult entree</div>,
+    <div className='sun'>Johnny Carino's: Happy Hour 3pm to 5pm and 8pm to Close</div>,
+]
+
 
 export default class MooseTabs extends React.Component {
     constructor(props) {
@@ -51,7 +144,7 @@ export default class MooseTabs extends React.Component {
                             className={classnames({ active: this.state.activeTab === '1' })}
                             onClick={() => { this.toggle('1'); }}
                         >
-                            Mon - Fri
+                            7 Days A Week
             </NavLink>
                     </NavItem>
                     <NavItem>
@@ -59,7 +152,7 @@ export default class MooseTabs extends React.Component {
                             className={classnames({ active: this.state.activeTab === '2' })}
                             onClick={() => { this.toggle('2'); }}
                         >
-                            7 Days A Week
+                            Mon - Fri
             </NavLink>
                     </NavItem>
                     <NavItem>
@@ -128,29 +221,27 @@ export default class MooseTabs extends React.Component {
                     </NavItem>
                 </Nav>
                 <TabContent activeTab={this.state.activeTab}>
-                    <TabPane tabId="1">
+                <TabPane tabId="1">
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Every Weekday Specials</CardTitle>
+                                    <CardTitle>Everyday Specials</CardTitle>
                                     <CardText>
                                         <div id="moosetabs-text" className="mappy">
-                                            <ListArray listItem={everyWeekDay[0]} addRemoveItem={this.props.addRemoveItem} />                                            <ListArray listItem={everyWeekDay[1]} addRemoveItem={this.props.addRemoveItem} />
-                                            <ListArray listItem={everyWeekDay[2]} addRemoveItem={this.props.addRemoveItem} />
-                                            <ListArray listItem={everyWeekDay[3]} addRemoveItem={this.props.addRemoveItem} />
-                                            <ListArray listItem={everyWeekDay[4]} addRemoveItem={this.props.addRemoveItem} />
-                                            <ListArray listItem={everyWeekDay[5]} addRemoveItem={this.props.addRemoveItem} />
-                                        </div>
-                                        <div id='map' className="mappy"></div>
-                                    </CardText>
-                                </Card>
-                            </Col>
-                            <Col sm="6">
-                                <Card body>
-                                    <CardTitle>Your Saved Specials</CardTitle>
-                                    <CardText>
-                                        <div id="moosetabs-text">
-                                            <Userlist userProfile={this.props.userProfile}/>
+                                            <ListArray listItem={everyDay[0]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[2]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[3]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[4]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[5]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[6]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[7]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[8]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[9]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[10]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[11]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[12]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyDay[13]} addRemoveItem={this.props.addRemoveItem} />
                                         </div>
                                     </CardText>
                                 </Card>
@@ -161,23 +252,28 @@ export default class MooseTabs extends React.Component {
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Everyday Specials</CardTitle>
+                                <div id="moosetabs-text">
+                                    <CardTitle>Every Weekday Specials</CardTitle>
                                     <CardText>
-                                        <li>$2 PBR or Black Velvet - <SitePopover className="popover-test" siteTitle="The Legion" imgUrl="http://bozemanamericanlegion.org/yahoo_site_admin/assets/images/americanlegionlogo.10384110_std.jpg" siteUrl="http://www.bozemanamericanlegion.org/" /></li>
-                                        <li>$2 Bud and Bud Light cans - <SitePopover siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /></li>
-                                        <li>$2 Rainier Cans and Bottles - <SitePopover siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /></li>
-                                        <li>$1.75 Oly and PBR - <SitePopover siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /></li>
-                                        <li>$2 Pacifico and Corona - <SitePopover siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /></li>
-                                        <li>$3 Grey Goose and $2 Fire Ball Shots and rotating beer specials (Current special, changes from time to time) - <SitePopover siteTitle="Cat's Paw" imgUrl="https://cdn-az.allevents.in/banners/3beae132a566c7e4e01eabc8262b557d-rimg-w600-h600-gmir.jpg" siteUrl="https://www.facebook.com/catspawbozeman/" /></li>
-                                        <li>$8 Bucket of 5 Coronas - Baja Fresh<SitePopover siteTitle="Baja Fresh" imgUrl="https://upload.wikimedia.org/wikipedia/commons/b/bf/Logo_of_Baja_Fresh_%281997%E2%80%932010%29.png" siteUrl="" /></li>
-                                        <li>$2 Jack - <SitePopover siteTitle="Mixers" imgUrl="http://bozemanmagazine.com/uploads/image/listing/000/633/633/header_giant/633_1983_670_Screen_shot_2014_01_29_at_3_01_46_PM.png" siteUrl="http://www.mixersclub.com/" /></li>
-                                        <li>$2 Drafts, wells and domestics and 2 for 1 appetizers - 4-7pm - <SitePopover siteTitle="Mixers" imgUrl="http://bozemanmagazine.com/uploads/image/listing/000/633/633/header_giant/633_1983_670_Screen_shot_2014_01_29_at_3_01_46_PM.png" siteUrl="http://www.mixersclub.com/" /></li>
-                                        <li>$3 Pints - <SitePopover siteTitle="Neptunes" imgUrl="https://s-media-cache-ak0.pinimg.com/originals/59/8d/f5/598df5e196d071cf5478e31c9056465a.jpg" siteUrl="http://neptunesbrewery.com/" /></li>
-                                        <li>$4 Long Island Iced Teas, $5 Margaritas, $5 Mai Thais, $3 Draft Beers, $4 23oz draft beer, $4 Pork Carnitas, $5 Beef Sliders, $5 Shrimp Cocktail - 4-6pm - <SitePopover siteTitle="The Bay" imgUrl="http://thebaybarandgrille.com/wp-content/uploads/2016/04/the-bay-logo-final.png" siteUrl="http://thebaybarandgrille.com/" /></li>
-                                        <li>$1.50 Beer Special - <SitePopover siteTitle="The Eagles" imgUrl="http://4.bp.blogspot.com/-9z2XKye19Sc/T0-_C0glauI/AAAAAAAAFtw/QrN-WZIOKIM/s1600/eagle.jpg" siteUrl="https://www.facebook.com/bozemaneagles326/" /></li>
-                                        <li>Free Ski Pass To Bridger Bowl if you blow the keg - <SitePopover siteTitle="Bar IX" imgUrl="https://www.slamfestivals.org/wp-content/uploads/2015/08/Bar-IX-Montana-Logo-blank-back.jpg" siteUrl="http://bar-ix.com/" /></li>
-                                        <li>Happy Hour 3pm - 5pm - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
+                                            <ListArray listItem={everyWeekDay[0]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyWeekDay[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyWeekDay[2]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyWeekDay[3]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyWeekDay[4]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyWeekDay[5]} addRemoveItem={this.props.addRemoveItem} />
                                     </CardText>
+                                    </div>
+                                </Card>
+                            </Col>
+                            <Col sm="6">
+                                <Card body>
+                                <div id="moosetabs-text">
+                                    <CardTitle>Your Saved Specials</CardTitle>
+                                    <CardText>
+                                            <Userlist userProfile={this.props.userProfile} />
+                                       
+                                    </CardText>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>
@@ -188,17 +284,16 @@ export default class MooseTabs extends React.Component {
                                 <Card body>
                                     <CardTitle>Monday Specials</CardTitle>
                                     <CardText>
-                                        <li>$8 Cannery Calypso Cooler - <SitePopover siteTitle="The Cannery" siteDescription="Cannery info" imgUrl="http://webzoom.freewebs.com/thecanneryandburgerbobs/cannery%20logo1.jpg" siteUrl="http://thecanneryandburgerbobs.webs.com/" /></li>
-                                        <li>$1.75 Millers all day - <SitePopover siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /></li>
-                                        <li>Food and Drink Specials - SIN Night - <SitePopover siteTitle="Plonk" imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv6Ph5nQ705QexMzlGl2wesbm5fZsojCFLr7pr6jBiRkO_ukbKuQ" siteUrl="https://plonkwine.com/" /></li>
-                                        <li>$2.50-$3 Pints, $3 Long Island Iced Teas, $4 Bahama Mamas and Margaritas, $4.99 Appetizers 4-6pm 9-close - <SitePopover siteTitle="Applebee's" imgUrl="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Applebee%27s.svg/1200px-Applebee%27s.svg.png" siteUrl="https://www.applebees.com/en" /></li>
-                                        <li>2 for 1 Long Island Iced Teas - <SitePopover siteTitle="Mixers" imgUrl="http://bozemanmagazine.com/uploads/image/listing/000/633/633/header_giant/633_1983_670_Screen_shot_2014_01_29_at_3_01_46_PM.png" siteUrl="http://www.mixersclub.com/" /></li>
-                                        <li>$6 Growler refills - 4-7pm - <SitePopover siteTitle="Neptunes" imgUrl="https://s-media-cache-ak0.pinimg.com/originals/59/8d/f5/598df5e196d071cf5478e31c9056465a.jpg" siteUrl="http://neptunesbrewery.com/" /></li>
-                                        <li>1/2 Price Nachos and $10 for 5 Bud Lights - <SitePopover siteTitle="The Pour House" siteDescription="Pour House info" siteUrl="http://www.pourhousemt.com/" imgUrl="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/1553124_10152157221594687_1238910614_o.jpg?oh=1090c77ef4005741b4065f2e92c3272d&oe=5B4DC923" /></li>
-                                        <li>$2.25 Drafts - <SitePopover siteTitle="Spectators" imgUrl="http://bozemancvb.com/uploads/Attractions/Spectators/Logo.jpg" siteUrl="http://www.spectatorsmt.com/" /></li>
-                                        <li>$10 18 Boneless Wings and a pitcher of beer - <SitePopover siteTitle="Bar IX" imgUrl="https://www.slamfestivals.org/wp-content/uploads/2015/08/Bar-IX-Montana-Logo-blank-back.jpg" siteUrl="http://bar-ix.com/" /></li>
-                                        <li>1/2 off every Family Platter - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
-                                        <li>Happy Hour 3pm to 5pm and 8pm to close - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
+                                        <ListArray listItem={monday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={monday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={monday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={monday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={monday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={monday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={monday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={monday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={monday[8]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={monday[9]} addRemoveItem={this.props.addRemoveItem} />
                                     </CardText>
                                 </Card>
                             </Col>
@@ -210,15 +305,14 @@ export default class MooseTabs extends React.Component {
                                 <Card body>
                                     <CardTitle>Tuesday Specials</CardTitle>
                                     <CardText>
-                                        <li>$6 Sauza Margaritas - <SitePopover siteTitle="The Cannery" siteDescription="Cannery info" imgUrl="http://webzoom.freewebs.com/thecanneryandburgerbobs/cannery%20logo1.jpg" siteUrl="http://thecanneryandburgerbobs.webs.com/" /></li>
-                                        <li>$2.50-$3 Pints, $3 Long Island Iced Teas, $4 Bahama Mamas and Margaritas, $4.99 Appetizers 4-6pm 9-close - <SitePopover siteTitle="Applebee's" imgUrl="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Applebee%27s.svg/1200px-Applebee%27s.svg.png" siteUrl="https://www.applebees.com/en" /></li>
-                                        <li>$1 Off pints from 4-7pm - <SitePopover siteTitle="Neptunes" imgUrl="https://s-media-cache-ak0.pinimg.com/originals/59/8d/f5/598df5e196d071cf5478e31c9056465a.jpg" siteUrl="http://neptunesbrewery.com/" /></li>
-                                        <li>$2 Coronas - <SitePopover siteTitle="The Pour House" siteDescription="Pour House info" siteUrl="http://www.pourhousemt.com/" imgUrl="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/1553124_10152157221594687_1238910614_o.jpg?oh=1090c77ef4005741b4065f2e92c3272d&oe=5B4DC923" /></li>
-                                        <li>$2.5 Vodka or gin and tonic $3.75 doubles - Tonic Tuesday - <SitePopover siteTitle="Spectators" imgUrl="http://bozemancvb.com/uploads/Attractions/Spectators/Logo.jpg" siteUrl="http://www.spectatorsmt.com/" /></li>
-                                        <li>$7.95 Half-pound burger and pint of beer - 5 to close -  <SitePopover siteTitle="Spectators" imgUrl="http://bozemancvb.com/uploads/Attractions/Spectators/Logo.jpg" siteUrl="http://www.spectatorsmt.com/" /></li>
-                                        <li>$2 Olympia, $1 Kamikazes - 5-9pm - The Rocking R-Bar<SitePopover siteTitle="The Rocking R-Bar" imgUrl="http://www.betweenthelinesmt.com/uploads/1/0/0/4/100479566/published/rbar-logo-bozeman.jpeg?1492409050" siteUrl="https://www.rockingrbar.com/" /></li>
-                                        <li>Free pitcher of beer with an order of ribs - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
-                                        <li>Happy Hour 3pm to 5pm and 8pm to Close - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
+                                        <ListArray listItem={tuesday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={tuesday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={tuesday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={tuesday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={tuesday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={tuesday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={tuesday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={tuesday[7]} addRemoveItem={this.props.addRemoveItem} />
                                     </CardText>
                                 </Card>
                             </Col>
@@ -230,19 +324,15 @@ export default class MooseTabs extends React.Component {
                                 <Card body>
                                     <CardTitle>Wednesday Specials</CardTitle>
                                     <CardText>
-                                        <li>50-cent Wing Wednesday - With purchase of any whiskey drink or cocktail - <SitePopover siteTitle="The Cannery" siteDescription="Cannery info" imgUrl="http://webzoom.freewebs.com/thecanneryandburgerbobs/cannery%20logo1.jpg" siteUrl="http://thecanneryandburgerbobs.webs.com/" /></li>
-                                        <li>$1.50 Ten-High Whiskey - Whiskey Wednesday - 10am-4pm - <SitePopover siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /></li>
-                                        <li>$5 Burger Beer and Chips ($1 for extra patty) - 5-8pm - <SitePopover siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /></li>
-                                        <li>$8 Baby Back Ribs - <SitePopover siteTitle="The Legion" imgUrl="http://bozemanamericanlegion.org/yahoo_site_admin/assets/images/americanlegionlogo.10384110_std.jpg" siteUrl="http://www.bozemanamericanlegion.org/" /></li>
-                                        <li>$2.50-$3 Pints, $3 Long Island Iced Teas, $4 Bahama Mamas and Margaritas, $4.99 Appetizers 4-6pm 9-close - <SitePopover siteTitle="Applebee's" imgUrl="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Applebee%27s.svg/1200px-Applebee%27s.svg.png" siteUrl="https://www.applebees.com/en" /></li>
-                                        <li>Free Live Jazz Music - <SitePopover siteTitle="Plonk" imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv6Ph5nQ705QexMzlGl2wesbm5fZsojCFLr7pr6jBiRkO_ukbKuQ" siteUrl="https://plonkwine.com/" /></li>
-                                        <li>75-cent Chicken Fingers - <SitePopover siteTitle="Buffalo Wild Wings" imgUrl="http://3.bp.blogspot.com/-WSyAaKL1TFY/T_6Yl8sfbwI/AAAAAAAAIXg/FqEjlMxT24o/s1600/Buffalo+Wild+Wings+logo.png" siteUrl="https://www.buffalowildwings.com/" /></li>
-                                        <li>$1 off all new beers added to WBT (up to four beers) - <SitePopover siteTitle="Old Chicago" imgUrl="http://kdth.radiodubuque.com/wp-content/uploads/sites/2/2017/11/Old-Chicago.jpg" siteUrl="https://oldchicago.com/locations/bozeman" /></li>
-                                        <li>$2 Jack, Bud Light Platinum and Draft Beer - Wild West Wednesday Dancing and a Country DJ - 8pm-Close - <SitePopover siteTitle="Mixers" imgUrl="http://bozemanmagazine.com/uploads/image/listing/000/633/633/header_giant/633_1983_670_Screen_shot_2014_01_29_at_3_01_46_PM.png" siteUrl="http://www.mixersclub.com/" /></li>
-                                        <li>$1 Off pints from 4-7pm - <SitePopover siteTitle="Neptunes" imgUrl="https://s-media-cache-ak0.pinimg.com/originals/59/8d/f5/598df5e196d071cf5478e31c9056465a.jpg" siteUrl="http://neptunesbrewery.com/" /></li>
-                                        <li>1/2 off all bottles of wine - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
-                                        <li>Happy Hour 3pm - 5pm and 8pm - Close - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
-
+                                        <ListArray listItem={wednesday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={wednesday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={wednesday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={wednesday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={wednesday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={wednesday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={wednesday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={wednesday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={wednesday[8]} addRemoveItem={this.props.addRemoveItem} />
                                     </CardText>
                                 </Card>
                             </Col>
@@ -254,20 +344,16 @@ export default class MooseTabs extends React.Component {
                                 <Card body>
                                     <CardTitle>Thursday Specials</CardTitle>
                                     <CardText>
-                                        <li>$5 Stoli Martinis and single ladies get first drink free! - Ladies Night - <SitePopover siteTitle="The Cannery" siteDescription="Cannery info" imgUrl="http://webzoom.freewebs.com/thecanneryandburgerbobs/cannery%20logo1.jpg" siteUrl="http://thecanneryandburgerbobs.webs.com/" /></li>
-                                        <li>2 for 1 Top Shelf Thursday - 8-11pm - <SitePopover siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /></li>
-                                        <li>$1.25 Pizza Slices and PBR - 8-10pm - <SitePopover siteTitle="Old Chicago" imgUrl="http://kdth.radiodubuque.com/wp-content/uploads/sites/2/2017/11/Old-Chicago.jpg" siteUrl="https://oldchicago.com/locations/bozeman" /></li>
-                                        <li>$2.50-$3 Pints, $3 Long Island Iced Teas, $4 Bahama Mamas and Margaritas, $4.99 Appetizers 4-6pm 9-close - <SitePopover siteTitle="Applebee's" imgUrl="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Applebee%27s.svg/1200px-Applebee%27s.svg.png" siteUrl="https://www.applebees.com/en" /></li>
-                                        <li>Boot Night - $5 for glass boot and first drink $3 refill doubles $2 refill drafts, Ladies wearing cowboy boots get $1 wells and $2 double wells - <SitePopover siteTitle="Mixers" imgUrl="http://bozemanmagazine.com/uploads/image/listing/000/633/633/header_giant/633_1983_670_Screen_shot_2014_01_29_at_3_01_46_PM.png" siteUrl="http://www.mixersclub.com/" /></li>
-                                        <li>$2 Pints - <SitePopover siteTitle="Cat's Paw" imgUrl="https://cdn-az.allevents.in/banners/3beae132a566c7e4e01eabc8262b557d-rimg-w600-h600-gmir.jpg" siteUrl="https://www.facebook.com/catspawbozeman/" /></li>
-                                        <li>$1 Off pint from 4-7pm - <SitePopover siteTitle="Neptunes" imgUrl="https://s-media-cache-ak0.pinimg.com/originals/59/8d/f5/598df5e196d071cf5478e31c9056465a.jpg" siteUrl="http://neptunesbrewery.com/" /></li>
-                                        <li>60-cent Boneless Wings - <SitePopover siteTitle="Buffalo Wild Wings" imgUrl="http://3.bp.blogspot.com/-WSyAaKL1TFY/T_6Yl8sfbwI/AAAAAAAAIXg/FqEjlMxT24o/s1600/Buffalo+Wild+Wings+logo.png" siteUrl="https://www.buffalowildwings.com/" /></li>
-                                        <li>$3 Stoli - <SitePopover siteTitle="The Pour House" siteDescription="Pour House info" siteUrl="http://www.pourhousemt.com/" imgUrl="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/1553124_10152157221594687_1238910614_o.jpg?oh=1090c77ef4005741b4065f2e92c3272d&oe=5B4DC923" /></li>
-                                        <li>$2.5 Stolli singles $3.75 doubles - <SitePopover siteTitle="Spectators" imgUrl="http://bozemancvb.com/uploads/Attractions/Spectators/Logo.jpg" siteUrl="http://www.spectatorsmt.com/" /></li>
-                                        <li>19.95 17 inch Pizza and pitcher of beer - 5-close - <SitePopover siteTitle="Spectators" imgUrl="http://bozemancvb.com/uploads/Attractions/Spectators/Logo.jpg" siteUrl="http://www.spectatorsmt.com/" /></li>
-                                        <li>$10 Pitcher of you favorite cocktail - 9 to close - <SitePopover siteTitle="Bar IX" imgUrl="https://www.slamfestivals.org/wp-content/uploads/2015/08/Bar-IX-Montana-Logo-blank-back.jpg" siteUrl="http://bar-ix.com/" /></li>
-                                        <li>Free shrimp and scallop scampi with purchase of a steak - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
-                                        <li>Happy Hour 3pm - 5pm and 8pm - Close - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
+                                        <ListArray listItem={thursday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={thursday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={thursday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={thursday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={thursday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={thursday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={thursday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={thursday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={thursday[8]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={thursday[9]} addRemoveItem={this.props.addRemoveItem} />
                                     </CardText>
                                 </Card>
                             </Col>
@@ -279,17 +365,16 @@ export default class MooseTabs extends React.Component {
                                 <Card body>
                                     <CardTitle>Friday Specials</CardTitle>
                                     <CardText>
-                                        <li>Free appetizers and $3 Draft Bud Light and PBR - <SitePopover siteTitle="The Cannery" siteDescription="Cannery info" imgUrl="http://webzoom.freewebs.com/thecanneryandburgerbobs/cannery%20logo1.jpg" siteUrl="http://thecanneryandburgerbobs.webs.com/" /></li>
-                                        <li>Live Music and Assorted Drink Specials - 7:30-10pm -  <SitePopover siteTitle="Montana Ted's" imgUrl="https://media-cdn.tripadvisor.com/media/photo-s/06/3f/93/56/ted-s-montana-grill.jpg" siteUrl="https://www.tedsmontanagrill.com/" /></li>
-                                        <li>$2.50-$3 Pints, $3 Long Island Iced Teas, $4 Bahama Mamas and Margaritas, $4.99 Appetizers 9-close - <SitePopover siteTitle="Applebee's" imgUrl="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Applebee%27s.svg/1200px-Applebee%27s.svg.png" siteUrl="https://www.applebees.com/en" /></li>
-                                        <li>$2 Premium Whiskey - Whiskey Friday - 9-11pm - <SitePopover siteTitle="Mixers" imgUrl="http://bozemanmagazine.com/uploads/image/listing/000/633/633/header_giant/633_1983_670_Screen_shot_2014_01_29_at_3_01_46_PM.png" siteUrl="http://www.mixersclub.com/" /></li>
-                                        <li>$1 Off pints from 4-7pm - <SitePopover siteTitle="Neptunes" imgUrl="https://s-media-cache-ak0.pinimg.com/originals/59/8d/f5/598df5e196d071cf5478e31c9056465a.jpg" siteUrl="http://neptunesbrewery.com/" /></li>
-                                        <li>$3 Jameson - <SitePopover siteTitle="The Pour House" siteDescription="Pour House info" siteUrl="http://www.pourhousemt.com/" imgUrl="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/1553124_10152157221594687_1238910614_o.jpg?oh=1090c77ef4005741b4065f2e92c3272d&oe=5B4DC923" /></li>
-                                        <li>$2 Twisted Teas, $3 Jager Bombs - <SitePopover siteTitle="Spectators" imgUrl="http://bozemancvb.com/uploads/Attractions/Spectators/Logo.jpg" siteUrl="http://www.spectatorsmt.com/" /></li>
-                                        <li>$12.75 12 Wings and a pitcher of beer - 5 - close - <SitePopover siteTitle="Spectators" imgUrl="http://bozemancvb.com/uploads/Attractions/Spectators/Logo.jpg" siteUrl="http://www.spectatorsmt.com/" /></li>
-                                        <li>$24.99 Dinner for Two - 2 Chef Select entrees, unlimited tuscan bread, soup or sald, and any two mini desserts - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
-                                        <li>Happy Hour 3pm - 5pm and 9pm - Close - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
-
+                                        <ListArray listItem={friday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={friday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={friday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={friday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={friday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={friday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={friday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={friday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={friday[8]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={friday[9]} addRemoveItem={this.props.addRemoveItem} />
                                     </CardText>
                                 </Card>
                             </Col>
@@ -301,14 +386,14 @@ export default class MooseTabs extends React.Component {
                                 <Card body>
                                     <CardTitle>Saturday Specials</CardTitle>
                                     <CardText>
-                                        <li>$5 Mimosas &amp; Bloody Mary's - <SitePopover siteTitle="The Cannery" siteDescription="Cannery info" imgUrl="http://webzoom.freewebs.com/thecanneryandburgerbobs/cannery%20logo1.jpg" siteUrl="http://thecanneryandburgerbobs.webs.com/" /></li>
-                                        <li>Live Music and Assorted Drink Specials - 7:30-10pm  -  <SitePopover siteTitle="Montana Ted's" imgUrl="https://media-cdn.tripadvisor.com/media/photo-s/06/3f/93/56/ted-s-montana-grill.jpg" siteUrl="https://www.tedsmontanagrill.com/" /></li>
-                                        <li>$2.50-$3 Pints, $3 Long Island Iced Teas, $4 Bahama Mamas and Margaritas, $4.99 Appetizers 4-6pm 9-close - <SitePopover siteTitle="Applebee's" imgUrl="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Applebee%27s.svg/1200px-Applebee%27s.svg.png" siteUrl="https://www.applebees.com/en" /></li>
-                                        <li>$1 Off pints from 4-7pm - <SitePopover siteTitle="Neptunes" imgUrl="https://s-media-cache-ak0.pinimg.com/originals/59/8d/f5/598df5e196d071cf5478e31c9056465a.jpg" siteUrl="http://neptunesbrewery.com/" /></li>
-                                        <li>50-cent wings, $3 Draft Beer - <SitePopover siteTitle="The Pour House" siteDescription="Pour House info" siteUrl="http://www.pourhousemt.com/" imgUrl="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/1553124_10152157221594687_1238910614_o.jpg?oh=1090c77ef4005741b4065f2e92c3272d&oe=5B4DC923" /></li>
-                                        <li>Doubles for singles - 4-9pm - <SitePopover siteTitle="Bar IX" imgUrl="https://www.slamfestivals.org/wp-content/uploads/2015/08/Bar-IX-Montana-Logo-blank-back.jpg" siteUrl="http://bar-ix.com/" /></li>
-                                        <li>$24.99 Dinner for Two - 2 Chef Select entrees, unlimited tuscan bread, soup or sald, and any two mini desserts - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
-                                        <li>Happy Hour 3pm to 5pm and 9pm to Close - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
+                                        <ListArray listItem={saturday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={saturday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={saturday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={saturday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={saturday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={saturday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={saturday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={saturday[7]} addRemoveItem={this.props.addRemoveItem} />
                                     </CardText>
                                 </Card>
                             </Col>
@@ -320,14 +405,15 @@ export default class MooseTabs extends React.Component {
                                 <Card body>
                                     <CardTitle>Sunday Specials</CardTitle>
                                     <CardText>
-                                        <li>$1 Beef or Chicken Sliders with purchase of a pitcher of beer - <SitePopover siteTitle="The Cannery" siteDescription="Cannery info" imgUrl="http://webzoom.freewebs.com/thecanneryandburgerbobs/cannery%20logo1.jpg" siteUrl="http://thecanneryandburgerbobs.webs.com/" /></li>
-                                        <li>$2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 7-10pm - <SitePopover siteTitle="Old Chicago" imgUrl="http://kdth.radiodubuque.com/wp-content/uploads/sites/2/2017/11/Old-Chicago.jpg" siteUrl="https://oldchicago.com/locations/bozeman" /></li>
-                                        <li>$5 Coffee and 4 Beignets - <SitePopover siteTitle="Cafe Zydeco" imgUrl="http://static.wixstatic.com/media/8ea240_3aa7ef93332984f788c5562b656d5178.png/v1/fill/w_363,h_225,al_c,usm_0.66_1.00_0.01/8ea240_3aa7ef93332984f788c5562b656d5178.png" siteUrl="http://www.cafezydeco.com/" /></li>
-                                        <li>$5.75 Chicken Fried Steak Hashed Browns and Toast - <SitePopover siteTitle="Cat's Paw" imgUrl="https://cdn-az.allevents.in/banners/3beae132a566c7e4e01eabc8262b557d-rimg-w600-h600-gmir.jpg" siteUrl="https://www.facebook.com/catspawbozeman/" /></li>
-                                        <li>$2 Sliders, Bottomless Mimosa - <SitePopover siteTitle="The Pour House" siteDescription="Pour House info" siteUrl="http://www.pourhousemt.com/" imgUrl="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/1553124_10152157221594687_1238910614_o.jpg?oh=1090c77ef4005741b4065f2e92c3272d&oe=5B4DC923" /></li>
-                                        <li>2 for 1 all day - <SitePopover siteTitle="Bar IX" imgUrl="https://www.slamfestivals.org/wp-content/uploads/2015/08/Bar-IX-Montana-Logo-blank-back.jpg" siteUrl="http://bar-ix.com/" /></li>
-                                        <li>Kids 10 and under eat free with purchase of adult entree - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
-                                        <li>Happy Hour 3pm to 5pm and 8pm to Close - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
+                                        <ListArray listItem={sunday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={sunday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={sunday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={sunday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={sunday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={sunday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={sunday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                        <ListArray listItem={sunday[7]} addRemoveItem={this.props.addRemoveItem} />
+
                                     </CardText>
                                 </Card>
                             </Col>
@@ -340,7 +426,7 @@ export default class MooseTabs extends React.Component {
                                     <CardTitle>Your Saved Specials</CardTitle>
                                     <CardText>
                                         <div id="moosetabs-text">
-                                            <Userlist userProfile={this.props.userProfile}/>
+                                            <Userlist userProfile={this.props.userProfile} />
                                         </div>
                                     </CardText>
                                 </Card>

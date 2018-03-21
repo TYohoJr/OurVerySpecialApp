@@ -32,7 +32,7 @@ export default class ListArray extends React.Component {
     render() {
         return (
             <div>
-                <input type="checkbox" onChange={this.runListItem} /> {this.props.listItem}
+               <input type="checkbox" onChange={this.runListItem} /><div className="checkbox">{this.props.listItem}</div>
             </div>
         )
     }

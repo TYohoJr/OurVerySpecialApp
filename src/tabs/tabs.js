@@ -5,6 +5,7 @@ import "./tabs.css";
 import { Table } from 'reactstrap';
 import FoodButton from "../FoodButton/FoodButton";
 import MooseTabs from "../moosetabs/moosetabs.js";
+import MusicButton from "../MusicButton/MusicButton.js";
 
 export default class Tabs extends React.Component {
   constructor(props) {
@@ -31,6 +32,15 @@ export default class Tabs extends React.Component {
         </th>
       )
     });
+
+    let musicButtons = this.props.music.map((m, i) =>{
+      return (
+        <th key={i}>
+          <MusicButton subscribeToPlace={this.props.subscribeToPlace} music={m} />
+        </th>
+      )
+    })
+
     return (
       <div>
         <Nav id="tabs" tabs>
@@ -92,7 +102,8 @@ export default class Tabs extends React.Component {
                 <Table>
                   <thead>
                     <tr>
-                      <th>
+                      {musicButtons}
+                      {/* <th>
                         <div>
                           <button id="fillingSmsBtn" className="tabsBtns" onClick={this.props.sendFillingText}><img className="tncBtns" src={require("../project-images/sms.png")} alt="sms" />Daily Alert</button>
                           <a href="https://www.google.com/maps/place/Filling+Station+VFW/@45.7347721,-111.2473871,12z/data=!4m8!1m2!2m1!1sfilling+station+bozeman+website!3m4!1s0x534544141d981605:0x7e21f1397f2a54ad!8m2!3d45.6988202!4d-111.0319631" target="_blank" rel="noopener noreferrer" ><button id="tncSiteBtn" className="tabsBtns"><img className="tncBtns" src={require("../project-images/directions.jpg")} alt="site" />Directions</button></a>
@@ -112,7 +123,7 @@ export default class Tabs extends React.Component {
                           <a href="https://www.google.com/maps/place/Rialto+Bozeman/@45.6791062,-111.039787,17z/data=!3m1!4b1!4m5!3m4!1s0x53454450a6bce6af:0x3c24d92cd60d2212!8m2!3d45.6791025!4d-111.0375983" target="_blank" rel="noopener noreferrer"><button id="davesSiteBtn" className="tabsBtns"><img className="davesBtns" src={require("../project-images/directions.jpg")} alt="site" />Directions</button></a>
                           <a href="https://rialtobozeman.ticketfly.com/" target="_blank" rel="noopener noreferrer"><button id="davesReviewBtn" className="tabsBtns"><img className="davesBtns" src={require("../project-images/music.png")} alt="review" />Events</button></a>
                         </div>
-                      </th>
+                      </th> */}
                     </tr>
                   </thead>
                   <tbody>
