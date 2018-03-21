@@ -29,6 +29,30 @@ var places = [
   }
 ];
 
+var venues = [
+  {
+    name: "Town and Country",
+    links: {
+      directions: "http://tncfoods.com/",
+      events: "https://www.yelp.com/biz/daves-sushi-bozeman-2"
+    }
+  },
+  {
+    name: "Heebs",
+    links: {
+      directions: "http://heebsgrocery.com/",
+      events: "https://www.yelp.com/biz/heebs-east-main-grocery-bozeman"
+    }
+  },
+  {
+    name: "Dave's Sushi",
+    links: {
+      directions: "http://www.daves-sushi.com",
+      events: "https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country"
+    }
+  }
+]
+
 
 export default class App extends Component {
   constructor() {
@@ -43,11 +67,11 @@ export default class App extends Component {
     this.addListItem = this.addListItem.bind(this);
     this.removeListItem = this.removeListItem.bind(this);
     this.state = {
-      userProfile:{
-        username:null,
-        password:null,
-        subscriptions:[],
-        number:null
+      userProfile: {
+        username: null,
+        password: null,
+        subscriptions: [],
+        number: null
       }
     }
   }
@@ -82,9 +106,9 @@ export default class App extends Component {
 
   subscribeToPlace(place) {
     axios.post("/subscribeToPlace", { place, username: this.state.username, number: this.state.number, token: localStorage.getItem("token") }).then((result) => {
-        this.setState({
-          userProfile:result.data
-        });
+      this.setState({
+        userProfile: result.data
+      });
     });
   }
 
@@ -113,7 +137,7 @@ export default class App extends Component {
   stopSms() {
     axios.post("/stopText", { username: this.state.username, number: this.state.number, token: localStorage.getItem("token") }).then((result) => {
       this.setState({
-        userProfile:result.data.user
+        userProfile: result.data.user
       })
       if (result.data.message) {
         alert(result.data.message)
@@ -142,16 +166,23 @@ export default class App extends Component {
   render() {
     return (
       <div className="App" >
-        <Navbar2 signIn={this.signIn} places={places} onPasswordChange={this.onPasswordChange}
-          onUserChange={this.onUserChange} toggle={this.toggle}
-          modal={this.state.modal} stopSms={this.stopSms} 
+        <Navbar2 signIn={this.signIn} places={places}
+          onPasswordChange={this.onPasswordChange}
+          onUserChange={this.onUserChange}
+          toggle={this.toggle}
+          modal={this.state.modal}
+          stopSms={this.stopSms}
           userProfile={this.state.userProfile} />
-        {this.state.userWelcome}
-        {/* <div id="page-header">
-        </div> */}
-        <Tabs id="main-tabs-div" places={places} subscribeToPlace={this.subscribeToPlace} sendHeebsText={this.sendHeebsText} sendDavesText={this.sendDavesText}
-          sendFillingText={this.sendFillingText} sendZebraText={this.sendZebraText} sendRialtoText={this.sendRialtoText}
-          addListItem={this.addListItem} userList={this.state.userList} removeListItem={this.removeListItem} />
+        <Tabs id="main-tabs-div" places={places}
+          subscribeToPlace={this.subscribeToPlace}
+          // sendHeebsText={this.sendHeebsText}
+          // sendDavesText={this.sendDavesText}
+          // sendFillingText={this.sendFillingText}
+          // sendZebraText={this.sendZebraText}
+          // sendRialtoText={this.sendRialtoText}
+          addListItem={this.addListItem}
+          userList={this.state.userList}
+          removeListItem={this.removeListItem} />
       </div>
     );
   }

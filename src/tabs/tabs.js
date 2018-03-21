@@ -26,10 +26,10 @@ export default class Tabs extends React.Component {
   }
 
   render() {
-    let foodButtons = this.props.places.map((p, i)=>{
+    let foodButtons = this.props.places.map((p, i) => {
       return (
         <th key={i}>
-         <FoodButton subscribeToPlace={this.props.subscribeToPlace} place={p}/>
+          <FoodButton subscribeToPlace={this.props.subscribeToPlace} place={p} />
         </th>
       )
     });
@@ -69,7 +69,7 @@ export default class Tabs extends React.Component {
                 <Table className="table1">
                   <thead>
                     <tr>
-                     {foodButtons}
+                      {foodButtons}
                     </tr>
                   </thead>
                   <tbody>
@@ -135,12 +135,7 @@ export default class Tabs extends React.Component {
           <TabPane tabId="3">
             <Row>
               <Col sm="12">
-                {/* <Table> */}
-                  {/* <div id="MooseTabs-div"> */}
-                  
-                    <MooseTabs id="MooseTabs-div" addListItem={this.props.addListItem} userList={this.props.userList} removeListItem={this.props.removeListItem}/>
-                  {/* </div> */}
-                {/* </Table> */}
+                <MooseTabs id="MooseTabs-div" addListItem={this.props.addListItem} userList={this.props.userList} removeListItem={this.props.removeListItem} />
               </Col>
             </Row>
           </TabPane>
