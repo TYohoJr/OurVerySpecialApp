@@ -64,48 +64,30 @@ export default class App extends Component {
     this.toggle = this.toggle.bind(this);
     this.stopSms = this.stopSms.bind(this);
     this.testSms = this.testSms.bind(this);
-    this.addListItem = this.addListItem.bind(this);
-    this.removeListItem = this.removeListItem.bind(this);
+    this.addRemoveItem = this.addRemoveItem.bind(this);
     this.state = {
       userProfile: {
         username: null,
         password: null,
         subscriptions: [],
-        number: null
-      }
+        items:[],
+        number: null,
+        modal: false
+      },
+      userList:""
     }
   }
 
-  addListItem(item) {
-    axios.post("/sendListItem", { item: item.props.children, token: localStorage.getItem("token"), number: this.state.number }).then((result) => {
-      console.log(result.data.item)
+  addRemoveItem(item, serverRoute) {
+    axios.post(serverRoute, { item: item.props.children, token: localStorage.getItem("token"), number: this.state.userProfile.number }).then((result) => {
       this.setState({
-        userList: result.data.item[0].items.map((item, index) => {
-          var somelist = <div>
-            <li>{item}</li>
-          </div>
-          return somelist
-        })
-      })
-    })
-  }
-
-  removeListItem(item) {
-    axios.post("/removeListItem", { item: item.props.children, token: localStorage.getItem("token"), number: this.state.number }).then((result) => {
-      console.log(result.data.item)
-      this.setState({
-        userList: result.data.item[0].items.map((item, index) => {
-          var somelist = <div>
-            <li>{item}</li>
-          </div>
-          return somelist
-        })
+        userProfile:result.data.user,
       })
     })
   }
 
   subscribeToPlace(place) {
-    axios.post("/subscribeToPlace", { place, username: this.state.username, number: this.state.number, token: localStorage.getItem("token") }).then((result) => {
+    axios.post("/subscribeToPlace", { place, username: this.state.userProfile.username, number: this.state.userProfile.number, token: localStorage.getItem("token") }).then((result) => {
       this.setState({
         userProfile: result.data
       });
@@ -118,14 +100,19 @@ export default class App extends Component {
       if (result.data.message === "Login successful!") {
         localStorage.setItem('token', result.data.myToken);
         this.setState({
-          userProfile: result.data.user
+          userProfile: result.data.user,
+          modal: !this.state.modal,
+          // userList: result.data.item[0].items.map((item, index) => {
+          //   var somelist = <div>
+          //     <li>{item}</li>
+          //   </div>
+          //   return somelist
+          // })
         });
       } else {
         alert(result.data.message)
       }
-      console.log(this.state.tncSubscribe)
     })
-
   }
 
   testSms() {
@@ -175,14 +162,9 @@ export default class App extends Component {
           userProfile={this.state.userProfile} />
         <Tabs id="main-tabs-div" places={places}
           subscribeToPlace={this.subscribeToPlace}
-          // sendHeebsText={this.sendHeebsText}
-          // sendDavesText={this.sendDavesText}
-          // sendFillingText={this.sendFillingText}
-          // sendZebraText={this.sendZebraText}
-          // sendRialtoText={this.sendRialtoText}
-          addListItem={this.addListItem}
+          addRemoveItem={this.addRemoveItem}
           userList={this.state.userList}
-          removeListItem={this.removeListItem} />
+          userProfile={this.state.userProfile} />
       </div>
     );
   }

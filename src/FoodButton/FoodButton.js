@@ -7,7 +7,12 @@ export default class FoodButton extends React.Component {
     }
 
     subscribeHandler(){
-        this.props.subscribeToPlace(this.props.place.name)
+        let token = localStorage.getItem("token")
+        if(token){
+            this.props.subscribeToPlace(this.props.place.name)
+        } else {
+            alert("You must be signed in to subscribe to alerts")
+        }
     }
     
     render(){

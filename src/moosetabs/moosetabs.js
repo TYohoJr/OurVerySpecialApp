@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import SitePopover from '../modal/modal.js';
 import "./moosetabs.css";
 import Userlist from "../userlist/userlist.js";
-// import axios from "axios";
 import ListArray from "../listarray/listarray.js"
 
 var everyWeekDay = [
@@ -14,8 +13,17 @@ var everyWeekDay = [
    <div>Sushi/Appetizer and Drink Happy Hour - Seven Sushi</div>,
    <div>$1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm - Pub 317</div>,
    <div>Doubles for Singles - 4-9pm - Bar IX</div>,
-
 ]
+
+var everyDay = [
+    <div></div>, 
+    <div> $2.75 Domestics, $2.75 Wells, $2.25 PBR Cans 4-7pm - The Legion</div>,
+    <div>$2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 4-7pm - Old Chicago</div>,
+    <div>Sushi/Appetizer and Drink Happy Hour - Seven Sushi</div>,
+    <div>$1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm - Pub 317</div>,
+    <div>Doubles for Singles - 4-9pm - Bar IX</div>,
+ ]
+ 
 
 export default class MooseTabs extends React.Component {
     constructor(props) {
@@ -142,12 +150,13 @@ export default class MooseTabs extends React.Component {
                                     <CardText>
                                         <div id="moosetabs-text" className="mappy">
                                             {/* <input type="checkbox" onClick={this.addListItem} /><p id="ewd-li-1"> $2 Wells and domestics 5-7pm</p><SitePopover calculateRoute={this.calculateRoute} siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /> */}
-                                            <ListArray listItem={everyWeekDay[0]} addListItem={this.props.addListItem} removeListItem={this.props.removeListItem} /> <SitePopover calculateRoute={this.calculateRoute} siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" />
-                                            <ListArray listItem={everyWeekDay[1]} addListItem={this.props.addListItem} removeListItem={this.props.removeListItem}/>
-                                            <ListArray listItem={everyWeekDay[2]} addListItem={this.props.addListItem} removeListItem={this.props.removeListItem}/>
-                                            <ListArray listItem={everyWeekDay[3]} addListItem={this.props.addListItem} removeListItem={this.props.removeListItem}/>
-                                            <ListArray listItem={everyWeekDay[4]} addListItem={this.props.addListItem} removeListItem={this.props.removeListItem}/>
-                                            <ListArray listItem={everyWeekDay[5]} addListItem={this.props.addListItem} removeListItem={this.props.removeListItem}/>
+                                            <ListArray listItem={everyWeekDay[0]} addRemoveItem={this.props.addRemoveItem} />
+                                             {/* <SitePopover calculateRoute={this.calculateRoute} siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /> */}
+                                            <ListArray listItem={everyWeekDay[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyWeekDay[2]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyWeekDay[3]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyWeekDay[4]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyWeekDay[5]} addRemoveItem={this.props.addRemoveItem} />
 
 
 
@@ -166,7 +175,7 @@ export default class MooseTabs extends React.Component {
                                     <CardTitle>Your Saved Specials</CardTitle>
                                     <CardText>
                                         <div id="moosetabs-text">
-                                            <Userlist userList={this.props.userList}/>
+                                            <Userlist userList={this.props.userList} userProfile={this.props.userProfile}/>
                                         </div>
                                     </CardText>
                                 </Card>
@@ -357,7 +366,7 @@ export default class MooseTabs extends React.Component {
                                     <CardTitle>Your Saved Specials</CardTitle>
                                     <CardText>
                                         <div id="moosetabs-text">
-                                            <Userlist userList={this.props.userList}/>
+                                            <Userlist userList={this.props.userList} userProfile={this.props.userProfile}/>
                                         </div>
                                     </CardText>
                                 </Card>

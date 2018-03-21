@@ -33,7 +33,6 @@ export default class Tabs extends React.Component {
         </th>
       )
     });
-
     return (
       <div>
         <Nav id="tabs" tabs>
@@ -70,6 +69,7 @@ export default class Tabs extends React.Component {
                   <thead>
                     <tr>
                       {foodButtons}
+                      {/* <FoodButton/> */}
                     </tr>
                   </thead>
                   <tbody>
@@ -135,7 +135,7 @@ export default class Tabs extends React.Component {
           <TabPane tabId="3">
             <Row>
               <Col sm="12">
-                <MooseTabs id="MooseTabs-div" addListItem={this.props.addListItem} userList={this.props.userList} removeListItem={this.props.removeListItem} />
+                <MooseTabs id="MooseTabs-div" addRemoveItem={this.props.addRemoveItem} userList={this.props.userList} userProfile={this.props.userProfile}/>
               </Col>
             </Row>
           </TabPane>
