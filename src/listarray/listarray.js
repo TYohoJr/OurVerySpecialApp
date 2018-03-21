@@ -1,4 +1,5 @@
 import React from "react";
+import "./listarray.css";
 
 export default class ListArray extends React.Component {
     constructor(props) {
@@ -10,7 +11,6 @@ export default class ListArray extends React.Component {
     }
 
     runListItem() {
-        console.log(this.props)
         let token = localStorage.getItem("token")
         if (token) {
             if (!this.state.checkboxState) {

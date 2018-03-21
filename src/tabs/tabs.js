@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import "./tabs.css";
 import { Table } from 'reactstrap';
-// import Photos from "../photos/photos.js";
 import FoodButton from "../FoodButton/FoodButton";
 import MooseTabs from "../moosetabs/moosetabs.js";
 
@@ -69,7 +67,6 @@ export default class Tabs extends React.Component {
                   <thead>
                     <tr>
                       {foodButtons}
-                      {/* <FoodButton/> */}
                     </tr>
                   </thead>
                   <tbody>
@@ -135,7 +132,7 @@ export default class Tabs extends React.Component {
           <TabPane tabId="3">
             <Row>
               <Col sm="12">
-                <MooseTabs id="MooseTabs-div" addRemoveItem={this.props.addRemoveItem} userList={this.props.userList} userProfile={this.props.userProfile}/>
+                <MooseTabs id="MooseTabs-div" addRemoveItem={this.props.addRemoveItem} userProfile={this.props.userProfile}/>
               </Col>
             </Row>
           </TabPane>

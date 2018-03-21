@@ -1,4 +1,5 @@
 import React from 'react';
+import "./FoodButton.css";
 
 export default class FoodButton extends React.Component {
     constructor(props){

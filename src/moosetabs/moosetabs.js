@@ -29,12 +29,8 @@ export default class MooseTabs extends React.Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
-        // this.addListItem = this.addListItem.bind(this);
         this.state = {
             activeTab: '1',
-            work: "",
-            myLatLng: "",
-            showUserList: ""
         };
     }
     toggle(tab) {
@@ -44,16 +40,6 @@ export default class MooseTabs extends React.Component {
             });
         }
     }
-
-    // addListItem(item) {
-    //     axios.post("/sendListItem", {item: item, token: localStorage.getItem("token"), number:this.state.number }).then((result) => {
-    //         this.setState({
-    //             userList: result.data.map((item, index)=>{
-
-    //             })
-    //         })
-    //     })
-    // }
 
     render() {
         return (
@@ -149,22 +135,11 @@ export default class MooseTabs extends React.Component {
                                     <CardTitle>Every Weekday Specials</CardTitle>
                                     <CardText>
                                         <div id="moosetabs-text" className="mappy">
-                                            {/* <input type="checkbox" onClick={this.addListItem} /><p id="ewd-li-1"> $2 Wells and domestics 5-7pm</p><SitePopover calculateRoute={this.calculateRoute} siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /> */}
-                                            <ListArray listItem={everyWeekDay[0]} addRemoveItem={this.props.addRemoveItem} />
-                                             {/* <SitePopover calculateRoute={this.calculateRoute} siteTitle="The Crystal" imgUrl="http://media.liveauctiongroup.net/i/27338/24151529_1.jpg?v=8D33FD3D09B7430" siteUrl="https://www.facebook.com/TheCrystalBar/" /> */}
-                                            <ListArray listItem={everyWeekDay[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={everyWeekDay[0]} addRemoveItem={this.props.addRemoveItem} />                                            <ListArray listItem={everyWeekDay[1]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyWeekDay[2]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyWeekDay[3]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyWeekDay[4]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyWeekDay[5]} addRemoveItem={this.props.addRemoveItem} />
-
-
-
-                                            {/* <li> $2.75 Domestics, $2.75 Wells, $2.25 PBR Cans 4-7pm - <SitePopover siteTitle="The Legion" imgUrl="http://bozemanamericanlegion.org/yahoo_site_admin/assets/images/americanlegionlogo.10384110_std.jpg" siteUrl="http://www.bozemanamericanlegion.org/" /></li>
-                                            <li>$2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 4-7pm - <SitePopover siteTitle="Old Chicago" imgUrl="http://kdth.radiodubuque.com/wp-content/uploads/sites/2/2017/11/Old-Chicago.jpg" siteUrl="https://oldchicago.com/locations/bozeman" /></li>
-                                            <li>Sushi/Appetizer and Drink Happy Hour <SitePopover siteTitle="Seven Sushi" imgUrl="http://static1.squarespace.com/static/55f3260ee4b0a0b7895485f9/t/55f36a7ee4b04150216a8a86/1442015873086/Seven-logo.png?format=1000w" siteUrl="https://www.7bozeman.com/" /></li>
-                                            <li>$1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm - <SitePopover siteTitle="Pub 317" imgUrl="http://www.runtothepub.com/uploads/2/4/4/3/24437128/317-logo_orig.jpg" siteUrl="http://www.pub317.com/" /></li>
-                                            <li>Doubles for Singles - 4-9pm - <SitePopover siteTitle="Bar IX" imgUrl="https://www.slamfestivals.org/wp-content/uploads/2015/08/Bar-IX-Montana-Logo-blank-back.jpg" siteUrl="http://bar-ix.com/" /></li> */}
                                         </div>
                                         <div id='map' className="mappy"></div>
                                     </CardText>
@@ -175,7 +150,7 @@ export default class MooseTabs extends React.Component {
                                     <CardTitle>Your Saved Specials</CardTitle>
                                     <CardText>
                                         <div id="moosetabs-text">
-                                            <Userlist userList={this.props.userList} userProfile={this.props.userProfile}/>
+                                            <Userlist userProfile={this.props.userProfile}/>
                                         </div>
                                     </CardText>
                                 </Card>
@@ -293,7 +268,6 @@ export default class MooseTabs extends React.Component {
                                         <li>$10 Pitcher of you favorite cocktail - 9 to close - <SitePopover siteTitle="Bar IX" imgUrl="https://www.slamfestivals.org/wp-content/uploads/2015/08/Bar-IX-Montana-Logo-blank-back.jpg" siteUrl="http://bar-ix.com/" /></li>
                                         <li>Free shrimp and scallop scampi with purchase of a steak - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
                                         <li>Happy Hour 3pm - 5pm and 8pm - Close - <SitePopover siteTitle="Johnny Carino's" imgUrl="http://images.all-free-download.com/images/graphiclarge/johnny_carinos_137557.jpg" siteUrl="http://www.carinos.com/bozeman-mt/menu" /></li>
-
                                     </CardText>
                                 </Card>
                             </Col>
@@ -366,7 +340,7 @@ export default class MooseTabs extends React.Component {
                                     <CardTitle>Your Saved Specials</CardTitle>
                                     <CardText>
                                         <div id="moosetabs-text">
-                                            <Userlist userList={this.props.userList} userProfile={this.props.userProfile}/>
+                                            <Userlist userProfile={this.props.userProfile}/>
                                         </div>
                                     </CardText>
                                 </Card>

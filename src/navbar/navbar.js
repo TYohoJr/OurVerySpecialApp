@@ -47,12 +47,6 @@ export default class Navbar2 extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav id="navbar-buttons" className="ml-auto" navbar>
               <div>
-                {/* <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem> */}
-                {/* <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
-              </NavItem> */}
                 <UncontrolledDropdown id="navbar-dropdown" nav inNavbar>
                   <DropdownToggle nav caret>
                     Sign in/up

@@ -29,29 +29,29 @@ var places = [
   }
 ];
 
-var venues = [
-  {
-    name: "Town and Country",
-    links: {
-      directions: "http://tncfoods.com/",
-      events: "https://www.yelp.com/biz/daves-sushi-bozeman-2"
-    }
-  },
-  {
-    name: "Heebs",
-    links: {
-      directions: "http://heebsgrocery.com/",
-      events: "https://www.yelp.com/biz/heebs-east-main-grocery-bozeman"
-    }
-  },
-  {
-    name: "Dave's Sushi",
-    links: {
-      directions: "http://www.daves-sushi.com",
-      events: "https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country"
-    }
-  }
-]
+// var venues = [
+//   {
+//     name: "Town and Country",
+//     links: {
+//       directions: "http://tncfoods.com/",
+//       events: "https://www.yelp.com/biz/daves-sushi-bozeman-2"
+//     }
+//   },
+//   {
+//     name: "Heebs",
+//     links: {
+//       directions: "http://heebsgrocery.com/",
+//       events: "https://www.yelp.com/biz/heebs-east-main-grocery-bozeman"
+//     }
+//   },
+//   {
+//     name: "Dave's Sushi",
+//     links: {
+//       directions: "http://www.daves-sushi.com",
+//       events: "https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country"
+//     }
+//   }
+// ]
 
 
 export default class App extends Component {
@@ -73,8 +73,7 @@ export default class App extends Component {
         items:[],
         number: null,
         modal: false
-      },
-      userList:""
+      }
     }
   }
 
@@ -102,12 +101,6 @@ export default class App extends Component {
         this.setState({
           userProfile: result.data.user,
           modal: !this.state.modal,
-          // userList: result.data.item[0].items.map((item, index) => {
-          //   var somelist = <div>
-          //     <li>{item}</li>
-          //   </div>
-          //   return somelist
-          // })
         });
       } else {
         alert(result.data.message)
@@ -163,7 +156,6 @@ export default class App extends Component {
         <Tabs id="main-tabs-div" places={places}
           subscribeToPlace={this.subscribeToPlace}
           addRemoveItem={this.addRemoveItem}
-          userList={this.state.userList}
           userProfile={this.state.userProfile} />
       </div>
     );

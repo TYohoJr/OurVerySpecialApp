@@ -7,7 +7,6 @@ import "./signin.css";
 export default class Signin extends React.Component {
     constructor(props) {
         super(props);
-        // this.runSignIn = this.runSignIn.bind(this);
         this.state = {
             modal: false,
             username: "",
@@ -15,12 +14,6 @@ export default class Signin extends React.Component {
             number: ""
         };
     }
-
-// runSignIn(){
-//     this.props.signIn.then((result)=>{
-//         this.props.toggle
-//     })
-// }
 
     render() {
         return (

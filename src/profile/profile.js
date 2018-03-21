@@ -4,14 +4,13 @@ import "./profile.css";
 export default class Profile extends Component {
 
     render() {
+        let token = localStorage.getItem("token")
+        if(token){
+            var subscriptions = this.props.userProfile.subscriptions.map((s)=>{
+                return <p className="profile-subs">{s}</p>
+            });
+        }
         
-        let subscriptions = this.props.userProfile.subscriptions.map((s)=>{
-            return <p className="profile-subs">{s}</p>
-        });
-
-        
-    
-
         return (
             <div id="profile-main">
                 <div id="user-profile">

@@ -3,14 +3,12 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import "./business.css";
 
-
 export default class Biz extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             modal: false
         };
-
         this.toggle = this.toggle.bind(this);
     }
 
@@ -23,7 +21,7 @@ export default class Biz extends React.Component {
     render() {
         return (
             <div>
-               <Button id="businessSignUp" color="danger" onClick={this.toggle}>For Business</Button>
+                <Button id="businessSignUp" color="danger" onClick={this.toggle}>For Business</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Business Sign Up Form</ModalHeader>
                     <ModalBody>
@@ -54,7 +52,6 @@ export default class Biz extends React.Component {
                                     <option>11:30AM</option>
                                     <option>12:00PM</option>
                                     <option>12:30PM</option>
-
                                 </Input>
                             </FormGroup>
                             <FormGroup>
@@ -67,13 +64,12 @@ export default class Biz extends React.Component {
                                 <FormText color="muted">
                                     This is some placeholder block-level help text for the above input.
                                     It's a bit lighter and easily wraps to a new line.
-          </FormText>
+                                </FormText>
                             </FormGroup>
                             <Button>Submit</Button>
                         </Form>
                     </ModalBody>
                     <ModalFooter>
-                        {/* <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '} */}
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
