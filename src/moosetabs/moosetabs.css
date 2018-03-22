@@ -11,13 +11,14 @@ li {
     color:rgb(17, 13, 13);
 }
 
-#moosetabs-text {
+.moosetabs-text {
     padding: 10px!important;
     font-size: 16px;
     background-color: rgb(98, 98, 98)!important;
     color: rgb(255, 255, 255)!important;
     text-shadow: 2px 2px black;
-
+    height: 500px;
+    overflow: scroll
 }
 
 .nav-link.active {

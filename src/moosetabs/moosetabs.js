@@ -21,12 +21,13 @@ var everyDay = [
     <div className='everyDay'>The Crystal: $2 Rainier Cans and Bottles</div>,
     <div className='everyDay'>The Crystal: $1.75 Oly and PBR</div>,
     <div className='everyDay'>The Crystal: $2 Pacifico and Corona</div>,
-    <div className='everyDay'>Cat's Paw: $3 Grey Goose and $2 Fire Ball Shots and rotating beer specials (Current special, changes from time to time)</div>,
+    <div className='everyDay'>Cat's Paw: $3 Grey Goose and $2 Fire Ball Shots and rotating beer specials</div>,
     <div className='everyDay'>Baja Fresh: $8 Bucket of 5 Coronas</div>,
     <div className='everyDay'>Mixers: $2 Jack</div>,
     <div className='everyDay'>Mixers: $2 Drafts, wells and domestics and 2 for 1 appetizers - 4-7pm</div>,
     <div className='everyDay'>Neptunes: $3 Pints</div>,
-    <div className='everyDay'>The Bay: $4 Long Island Iced Teas, $5 Margaritas, $5 Mai Thais, $3 Draft Beers, $4 23oz draft beer, $4 Pork Carnitas, $5 Beef Sliders, $5 Shrimp Cocktail - 4-6pm</div>,
+    <div className='everyDay'>The Bay: $4 Long Island Iced Teas, $5 Margaritas, $5 Mai Thais, $3 Draft Beers, $4 23oz draft beer</div>,
+    <div className="everyday">The Bay: $4 Pork Carnitas, $5 Beef Sliders, $5 Shrimp Cocktail - 4-6pm</div>,
     <div className='everyDay'>The Eagles: $1.50 Beer Special</div>,
     <div className='everyDay'>Bar IX: Free Ski Pass To Bridger Bowl if you blow the keg</div>,
     <div className='everyDay'>Johnny Carino's: Happy Hour 3pm - 5pm</div>,
@@ -69,16 +70,16 @@ var wednesday = [
 ]
 
 var thursday = [
-    <div className ='thurs'> The Cannery: $5 Stoli Martinis and single ladies get first drink free! - Ladies Night</div>,
-    <div className ='thurs'> The Crystal: 2 for 1 Top Shelf Thursday - 8-11pm - </div>,
-    <div className ='thurs'> Old Chicago: 8-10pm $1.25 Pizza Slices and PBR</div>,
-    <div className ='thurs'> Cat's Paw: $2 Pints ></div>,
-    <div className ='thurs'> Neptunes: 4-7pm $1 Off  </div>,
-    <div className ='thurs'> The Pour House: $3 Stoli</div>,
-    <div className ='thurs'> Spectators: $2.5 Stolli singles $3.75 doubles </div>,
-    <div className ='thurs'> Spectators: 5-close 19.95 17 inch Pizza and pitcher of beer </div>,
-    <div className ='thurs'> Bar IX: 9-close, $10 Pitcher of you favorite cocktail </div>,
-    <div className ='thurs'> Carinos: 3-5 and 8-close Happy Hour! </div>
+    <div className='thurs'> The Cannery: $5 Stoli Martinis and single ladies get first drink free! - Ladies Night</div>,
+    <div className='thurs'> The Crystal: 2 for 1 Top Shelf Thursday - 8-11pm - </div>,
+    <div className='thurs'> Old Chicago: 8-10pm $1.25 Pizza Slices and PBR</div>,
+    <div className='thurs'> Cat's Paw: $2 Pints ></div>,
+    <div className='thurs'> Neptunes: 4-7pm $1 Off  </div>,
+    <div className='thurs'> The Pour House: $3 Stoli</div>,
+    <div className='thurs'> Spectators: $2.5 Stolli singles $3.75 doubles </div>,
+    <div className='thurs'> Spectators: 5-close 19.95 17 inch Pizza and pitcher of beer </div>,
+    <div className='thurs'> Bar IX: 9-close, $10 Pitcher of you favorite cocktail </div>,
+    <div className='thurs'> Carinos: 3-5 and 8-close Happy Hour! </div>
 
 ]
 
@@ -211,23 +212,15 @@ export default class MooseTabs extends React.Component {
                             Sunday
             </NavLink>
                     </NavItem>
-                    <NavItem>
-                        <NavLink
-                            className={classnames({ active: this.state.activeTab === '10' })}
-                            onClick={() => { this.toggle('10'); }}
-                        >
-                            Your List
-            </NavLink>
-                    </NavItem>
                 </Nav>
                 <TabContent activeTab={this.state.activeTab}>
-                <TabPane tabId="1">
+                    <TabPane tabId="1">
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Everyday Specials</CardTitle>
-                                    <CardText>
-                                        <div id="moosetabs-text" className="mappy">
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Everyday Specials</CardTitle>
+                                        <CardText>
                                             <ListArray listItem={everyDay[0]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyDay[1]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyDay[2]} addRemoveItem={this.props.addRemoveItem} />
@@ -242,8 +235,19 @@ export default class MooseTabs extends React.Component {
                                             <ListArray listItem={everyDay[11]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyDay[12]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyDay[13]} addRemoveItem={this.props.addRemoveItem} />
-                                        </div>
-                                    </CardText>
+                                            <ListArray listItem={everyDay[14]} addRemoveItem={this.props.addRemoveItem} />
+                                        </CardText>
+                                    </div>
+                                </Card>
+                            </Col>
+                            <Col sm="6">
+                                <Card body>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Your Saved Specials</CardTitle>
+                                        <CardText>
+                                            <Userlist userProfile={this.props.userProfile} />
+                                        </CardText>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>
@@ -252,27 +256,26 @@ export default class MooseTabs extends React.Component {
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                <div id="moosetabs-text">
-                                    <CardTitle>Every Weekday Specials</CardTitle>
-                                    <CardText>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Every Weekday Specials</CardTitle>
+                                        <CardText>
                                             <ListArray listItem={everyWeekDay[0]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyWeekDay[1]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyWeekDay[2]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyWeekDay[3]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyWeekDay[4]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyWeekDay[5]} addRemoveItem={this.props.addRemoveItem} />
-                                    </CardText>
+                                        </CardText>
                                     </div>
                                 </Card>
                             </Col>
                             <Col sm="6">
                                 <Card body>
-                                <div id="moosetabs-text">
-                                    <CardTitle>Your Saved Specials</CardTitle>
-                                    <CardText>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Your Saved Specials</CardTitle>
+                                        <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
-                                       
-                                    </CardText>
+                                        </CardText>
                                     </div>
                                 </Card>
                             </Col>
@@ -282,19 +285,31 @@ export default class MooseTabs extends React.Component {
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Monday Specials</CardTitle>
-                                    <CardText>
-                                        <ListArray listItem={monday[0]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={monday[1]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={monday[2]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={monday[3]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={monday[4]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={monday[5]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={monday[6]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={monday[7]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={monday[8]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={monday[9]} addRemoveItem={this.props.addRemoveItem} />
-                                    </CardText>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Monday Specials</CardTitle>
+                                        <CardText>
+                                            <ListArray listItem={monday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={monday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={monday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={monday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={monday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={monday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={monday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={monday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={monday[8]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={monday[9]} addRemoveItem={this.props.addRemoveItem} />
+                                        </CardText>
+                                    </div>
+                                </Card>
+                            </Col>
+                            <Col sm="6">
+                                <Card body>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Your Saved Specials</CardTitle>
+                                        <CardText>
+                                            <Userlist userProfile={this.props.userProfile} />
+                                        </CardText>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>
@@ -303,17 +318,29 @@ export default class MooseTabs extends React.Component {
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Tuesday Specials</CardTitle>
-                                    <CardText>
-                                        <ListArray listItem={tuesday[0]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={tuesday[1]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={tuesday[2]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={tuesday[3]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={tuesday[4]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={tuesday[5]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={tuesday[6]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={tuesday[7]} addRemoveItem={this.props.addRemoveItem} />
-                                    </CardText>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Tuesday Specials</CardTitle>
+                                        <CardText>
+                                            <ListArray listItem={tuesday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={tuesday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={tuesday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={tuesday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={tuesday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={tuesday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={tuesday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={tuesday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                        </CardText>
+                                    </div>
+                                </Card>
+                            </Col>
+                            <Col sm="6">
+                                <Card body>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Your Saved Specials</CardTitle>
+                                        <CardText>
+                                            <Userlist userProfile={this.props.userProfile} />
+                                        </CardText>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>
@@ -322,18 +349,30 @@ export default class MooseTabs extends React.Component {
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Wednesday Specials</CardTitle>
-                                    <CardText>
-                                        <ListArray listItem={wednesday[0]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={wednesday[1]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={wednesday[2]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={wednesday[3]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={wednesday[4]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={wednesday[5]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={wednesday[6]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={wednesday[7]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={wednesday[8]} addRemoveItem={this.props.addRemoveItem} />
-                                    </CardText>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Wednesday Specials</CardTitle>
+                                        <CardText>
+                                            <ListArray listItem={wednesday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={wednesday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={wednesday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={wednesday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={wednesday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={wednesday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={wednesday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={wednesday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={wednesday[8]} addRemoveItem={this.props.addRemoveItem} />
+                                        </CardText>
+                                    </div>
+                                </Card>
+                            </Col>
+                            <Col sm="6">
+                                <Card body>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Your Saved Specials</CardTitle>
+                                        <CardText>
+                                            <Userlist userProfile={this.props.userProfile} />
+                                        </CardText>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>
@@ -342,19 +381,31 @@ export default class MooseTabs extends React.Component {
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Thursday Specials</CardTitle>
-                                    <CardText>
-                                        <ListArray listItem={thursday[0]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={thursday[1]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={thursday[2]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={thursday[3]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={thursday[4]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={thursday[5]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={thursday[6]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={thursday[7]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={thursday[8]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={thursday[9]} addRemoveItem={this.props.addRemoveItem} />
-                                    </CardText>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Thursday Specials</CardTitle>
+                                        <CardText>
+                                            <ListArray listItem={thursday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={thursday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={thursday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={thursday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={thursday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={thursday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={thursday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={thursday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={thursday[8]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={thursday[9]} addRemoveItem={this.props.addRemoveItem} />
+                                        </CardText>
+                                    </div>
+                                </Card>
+                            </Col>
+                            <Col sm="6">
+                                <Card body>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Your Saved Specials</CardTitle>
+                                        <CardText>
+                                            <Userlist userProfile={this.props.userProfile} />
+                                        </CardText>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>
@@ -363,19 +414,31 @@ export default class MooseTabs extends React.Component {
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Friday Specials</CardTitle>
-                                    <CardText>
-                                        <ListArray listItem={friday[0]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={friday[1]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={friday[2]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={friday[3]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={friday[4]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={friday[5]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={friday[6]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={friday[7]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={friday[8]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={friday[9]} addRemoveItem={this.props.addRemoveItem} />
-                                    </CardText>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Friday Specials</CardTitle>
+                                        <CardText>
+                                            <ListArray listItem={friday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={friday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={friday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={friday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={friday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={friday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={friday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={friday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={friday[8]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={friday[9]} addRemoveItem={this.props.addRemoveItem} />
+                                        </CardText>
+                                    </div>
+                                </Card>
+                            </Col>
+                            <Col sm="6">
+                                <Card body>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Your Saved Specials</CardTitle>
+                                        <CardText>
+                                            <Userlist userProfile={this.props.userProfile} />
+                                        </CardText>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>
@@ -384,17 +447,29 @@ export default class MooseTabs extends React.Component {
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Saturday Specials</CardTitle>
-                                    <CardText>
-                                        <ListArray listItem={saturday[0]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={saturday[1]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={saturday[2]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={saturday[3]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={saturday[4]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={saturday[5]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={saturday[6]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={saturday[7]} addRemoveItem={this.props.addRemoveItem} />
-                                    </CardText>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Saturday Specials</CardTitle>
+                                        <CardText>
+                                            <ListArray listItem={saturday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={saturday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={saturday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={saturday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={saturday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={saturday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={saturday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={saturday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                        </CardText>
+                                    </div>
+                                </Card>
+                            </Col>
+                            <Col sm="6">
+                                <Card body>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Your Saved Specials</CardTitle>
+                                        <CardText>
+                                            <Userlist userProfile={this.props.userProfile} />
+                                        </CardText>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>
@@ -403,32 +478,29 @@ export default class MooseTabs extends React.Component {
                         <Row>
                             <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Sunday Specials</CardTitle>
-                                    <CardText>
-                                        <ListArray listItem={sunday[0]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={sunday[1]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={sunday[2]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={sunday[3]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={sunday[4]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={sunday[5]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={sunday[6]} addRemoveItem={this.props.addRemoveItem} />
-                                        <ListArray listItem={sunday[7]} addRemoveItem={this.props.addRemoveItem} />
-
-                                    </CardText>
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Sunday Specials</CardTitle>
+                                        <CardText>
+                                            <ListArray listItem={sunday[0]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={sunday[1]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={sunday[2]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={sunday[3]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={sunday[4]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={sunday[5]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={sunday[6]} addRemoveItem={this.props.addRemoveItem} />
+                                            <ListArray listItem={sunday[7]} addRemoveItem={this.props.addRemoveItem} />
+                                        </CardText>
+                                    </div>
                                 </Card>
                             </Col>
-                        </Row>
-                    </TabPane>
-                    <TabPane tabId="10">
-                        <Row>
-                            <Col sm="12">
+                            <Col sm="6">
                                 <Card body>
-                                    <CardTitle>Your Saved Specials</CardTitle>
-                                    <CardText>
-                                        <div id="moosetabs-text">
+                                    <div className="moosetabs-text">
+                                        <CardTitle>Your Saved Specials</CardTitle>
+                                        <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
-                                        </div>
-                                    </CardText>
+                                        </CardText>
+                                    </div>
                                 </Card>
                             </Col>
                         </Row>

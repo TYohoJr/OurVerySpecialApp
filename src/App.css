@@ -43,12 +43,6 @@
   background-color: rgba(128, 128, 128, 0.500);
 }
 
-.profile-base-text {
-  font-size: 18px;
-  text-decoration-line: underline;
-  font-weight: bold;
-}
-
 #test-sms {
   margin-right: 5px;
 }

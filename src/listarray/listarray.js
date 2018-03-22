@@ -32,7 +32,8 @@ export default class ListArray extends React.Component {
     render() {
         return (
             <div>
-               <input type="checkbox" onChange={this.runListItem} /><div className="checkbox">{this.props.listItem}</div>
+                <br />
+                <input type="checkbox" onChange={this.runListItem} /><div className="moose-list-text">{this.props.listItem}</div>
             </div>
         )
     }

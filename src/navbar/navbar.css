@@ -30,3 +30,19 @@
 .dropdown-toggle.show {
     color:white!important;
 }
+
+#show-profile-div {
+    
+}
+
+#welcome-logo {
+    width:350px;
+    display: block;
+    margin-left: 33vw;
+}
+
+#show-profile-button{
+    background-color:#343a40!important;
+    color: #ffffff!important;
+    margin-right: 10px;
+}

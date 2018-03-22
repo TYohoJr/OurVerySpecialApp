@@ -9,13 +9,17 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Button
 } from 'reactstrap';
 import Signin from "../signin/signin.js";
 import Biz from "../business/business.js";
 import Signup from "../signup/signup.js";
 import Profile from "../profile/profile.js";
+import Popover1 from "../popover/popover.js";
 import "./navbar.css";
+
+var showProfile;
 
 export default class Navbar2 extends React.Component {
   constructor(props) {
@@ -39,10 +43,24 @@ export default class Navbar2 extends React.Component {
   }
 
   render() {
+    let token = localStorage.getItem("token");
+    if (token) {
+      showProfile =
+        <Profile stopSms={this.props.stopSms} userProfile={this.props.userProfile} />
+    } else {
+      showProfile =
+        <Popover1 stopSms={this.props.stopSms} userProfile={this.props.userProfile} />
+    }
+
     return (
       <div>
         <Navbar id="navbar-main" color="faded" light expand="md" className="w3-animate-left">
-          <Profile stopSms={this.props.stopSms} userProfile={this.props.userProfile} />
+          <div id="show-profile-div">
+            {showProfile}
+          </div>
+          <div id="welcome-logo">
+            <img src={require("../project-images/logo.png")} className="App-logo" alt="logo" /><br />
+          </div>
           <NavbarToggler onClick={this.toggle} number={this.props.number} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav id="navbar-buttons" className="ml-auto" navbar>

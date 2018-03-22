@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Tabs from "./tabs/tabs.js";
 import axios from "axios";
 import Navbar2 from "./navbar/navbar.js";
+import Profile from "./profile/profile";
 
 var places = [
   {
@@ -75,9 +76,9 @@ export default class App extends Component {
         username: null,
         password: null,
         subscriptions: [],
-        items:[],
+        items: [],
         number: null,
-        modal: false
+        modal: false, 
       }
     }
   }
@@ -85,7 +86,7 @@ export default class App extends Component {
   addRemoveItem(item, serverRoute) {
     axios.post(serverRoute, { item: item.props.children, token: localStorage.getItem("token"), number: this.state.userProfile.number }).then((result) => {
       this.setState({
-        userProfile:result.data.user,
+        userProfile: result.data.user,
       })
     })
   }
@@ -149,6 +150,14 @@ export default class App extends Component {
   }
 
   render() {
+
+    window.onbeforeunload = function (e) {
+      window.onunload = function () {
+        window.localStorage.clear();
+      }
+      return undefined;
+    };
+
     return (
       <div className="App" >
         <Navbar2 signIn={this.signIn} places={places}
@@ -157,7 +166,6 @@ export default class App extends Component {
           toggle={this.toggle}
           modal={this.state.modal}
           stopSms={this.stopSms}
-          
           userProfile={this.state.userProfile} />
         <Tabs id="main-tabs-div" places={places}
           subscribeToPlace={this.subscribeToPlace}
