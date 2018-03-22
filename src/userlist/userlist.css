@@ -1,0 +1,17 @@
+#list {
+    padding:10px;
+}
+
+.list-item {
+    margin:20px;
+    border-top:solid black .5px;
+
+}
+
+.dayOfTheWeek {
+    font-size:22px;
+    margin:10px;
+    color:rgb(61, 189, 221);
+    text-shadow: 1px 1px black;
+
+}

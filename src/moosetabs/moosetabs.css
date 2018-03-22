@@ -9,6 +9,9 @@ li {
     margin-top: 10px;
     padding:10px;
     color:rgb(17, 13, 13);
+    background-color: rgb(98, 98, 98)!important;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0)
+
 }
 
 .moosetabs-text {
@@ -27,8 +30,9 @@ li {
 
 .card-title {
     text-shadow: 2px 2px black;
-    font-size: 40px;
+    font-size: 35px;
     color: rgb(61, 189, 221);
     text-align: center;
     
 }
+

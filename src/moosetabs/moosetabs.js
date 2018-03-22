@@ -6,15 +6,6 @@ import "./moosetabs.css";
 import Userlist from "../userlist/userlist.js";
 import ListArray from "../listarray/listarray.js"
 
-var everyWeekDay = [
-    <div className='everyweekday'>The Crystal: $2 Wells and domestics 5-7pm</div>,
-    <div className='everyweekday'>The Legion: $2.75 Domestics, $2.75 Wells, $2.25 PBR Cans 4-7pm</div>,
-    <div className='everyweekday'>Old Chicago: $2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 4-7pm</div>,
-    <div className='everyweekday'>Seven Sushi: Sushi/Appetizer and Drink Happy Hour</div>,
-    <div className='everyweekday'>Pub 317: $1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm</div>,
-    <div className='everyweekday'>Bar IX: Doubles for Singles - 4-9pm</div>,
-]
-
 var everyDay = [
     <div className='everyDay'>The Legion: $2 PBR or Black Velvet</div>,
     <div className='everyDay'>The Crystal: $2 Bud and Bud Light cans</div>,
@@ -31,6 +22,15 @@ var everyDay = [
     <div className='everyDay'>The Eagles: $1.50 Beer Special</div>,
     <div className='everyDay'>Bar IX: Free Ski Pass To Bridger Bowl if you blow the keg</div>,
     <div className='everyDay'>Johnny Carino's: Happy Hour 3pm - 5pm</div>,
+]
+
+var everyWeekDay = [
+    <div className='everyweekday'>The Crystal: $2 Wells and domestics 5-7pm</div>,
+    <div className='everyweekday'>The Legion: $2.75 Domestics, $2.75 Wells, $2.25 PBR Cans 4-7pm</div>,
+    <div className='everyweekday'>Old Chicago: $2.49 Wells $2.99 Cocktails 2.99 or cheaper on all beers $2.99 House Wine - 4-7pm</div>,
+    <div className='everyweekday'>Seven Sushi: Sushi/Appetizer and Drink Happy Hour</div>,
+    <div className='everyweekday'>Pub 317: $1 off Drafts, $2.5 single $3.75 Double wells - 3:17 - 6:17pm</div>,
+    <div className='everyweekday'>Bar IX: Doubles for Singles - 4-9pm</div>,
 ]
 
 var monday = [

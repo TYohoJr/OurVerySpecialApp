@@ -79,12 +79,23 @@ export default class App extends Component {
         items: [],
         number: null,
         modal: false, 
+        everyweekday:[],
+        mon:[],
+        tues:[],
+        weds:[],
+        thurs:[],
+        fri:[],
+        sat:[],
+        sun:[],
+        everyDay:[],
       }
     }
   }
 
   addRemoveItem(item, serverRoute) {
-    axios.post(serverRoute, { item: item.props.children, token: localStorage.getItem("token"), number: this.state.userProfile.number }).then((result) => {
+    
+    axios.post(serverRoute, { item: item.props, token: localStorage.getItem("token"), number: this.state.userProfile.number }).then((result) => {
+     
       this.setState({
         userProfile: result.data.user,
       })
@@ -104,6 +115,7 @@ export default class App extends Component {
       console.log(result.data.message)
       if (result.data.message === "Login successful!") {
         localStorage.setItem('token', result.data.myToken);
+        debugger
         this.setState({
           userProfile: result.data.user,
           modal: !this.state.modal,
@@ -125,9 +137,9 @@ export default class App extends Component {
       this.setState({
         userProfile: result.data.user
       })
-      if (result.data.message) {
-        alert(result.data.message)
-      }
+      // if (result.data.message) {
+      //   alert(result.data.message)
+      // }
     })
   }
 

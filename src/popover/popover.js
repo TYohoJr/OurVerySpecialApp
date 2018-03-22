@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 import Profile from "../profile/profile.js";
+import "./popover.css"
 
 export default class Popover1 extends React.Component {
     constructor(props) {
@@ -27,7 +28,7 @@ export default class Popover1 extends React.Component {
                 </Button>
                 <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
                     {/* <PopoverHeader>Popover Title</PopoverHeader> */}
-                    <PopoverBody>Please login to view profile</PopoverBody>
+                    <PopoverBody><div id="popover-text">Please login to view profile</div></PopoverBody>
                 </Popover>
             </div>
         );
