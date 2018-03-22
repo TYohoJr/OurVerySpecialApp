@@ -97,15 +97,15 @@ export default class Userlist extends Component {
         }
         return (
             <div id='list'>
-               <div className='list-item'><div className='dayOfTheWeek'>Everyday:</div>{everyDaySpecialsList}</div>
-               <div className='list-item'><div className='dayOfTheWeek'>Weekdays:</div>{everyweekdaySpecialsList}</div>
-               <div className='list-item'><div className='dayOfTheWeek'>Monday:</div>{monSpecialsList}</div>
-               <div className='list-item'><div className='dayOfTheWeek'>Tuesday:</div>{tuesSpecialsList}</div>
-               <div className='list-item'><div className='dayOfTheWeek'>Wednesday:</div>{wedsSpecialsList}</div>
-               <div className='list-item'><div className='dayOfTheWeek'>Thursdays:</div>{thursSpecialsList}</div>
-               <div className='list-item'><div className='dayOfTheWeek'>Friday:</div>{friSpecialsList}</div>
-               <div className='list-item'><div className='dayOfTheWeek'>Saturday:</div>{satSpecialsList}</div>
-               <div className='list-item'><div className='dayOfTheWeek'>Sunday:</div>{sunSpecialsList}</div>
+                <div className='list-item'><div className='dayOfTheWeek'>Everyday:</div>{everyDaySpecialsList}</div>
+                <div className='list-item'><div className='dayOfTheWeek'>Weekdays:</div>{everyweekdaySpecialsList}</div>
+                <div className='list-item'><div className='dayOfTheWeek'>Monday:</div>{monSpecialsList}</div>
+                <div className='list-item'><div className='dayOfTheWeek'>Tuesday:</div>{tuesSpecialsList}</div>
+                <div className='list-item'><div className='dayOfTheWeek'>Wednesday:</div>{wedsSpecialsList}</div>
+                <div className='list-item'><div className='dayOfTheWeek'>Thursdays:</div>{thursSpecialsList}</div>
+                <div className='list-item'><div className='dayOfTheWeek'>Friday:</div>{friSpecialsList}</div>
+                <div className='list-item'><div className='dayOfTheWeek'>Saturday:</div>{satSpecialsList}</div>
+                <div className='list-item'><div className='dayOfTheWeek'>Sunday:</div>{sunSpecialsList}</div>
             </div>
         )
     }

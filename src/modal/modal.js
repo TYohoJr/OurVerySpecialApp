@@ -5,10 +5,10 @@ import "./modal.css";
 export default class SitePopover extends React.Component {
     constructor(props) {
         super(props);
+        this.toggle = this.toggle.bind(this);
         this.state = {
             modal: false
         };
-        this.toggle = this.toggle.bind(this);
     }
 
     toggle() {

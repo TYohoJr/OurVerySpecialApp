@@ -127,6 +127,7 @@ export default class MooseTabs extends React.Component {
             activeTab: '1',
         };
     }
+
     toggle(tab) {
         if (this.state.activeTab !== tab) {
             this.setState({
@@ -139,16 +140,15 @@ export default class MooseTabs extends React.Component {
         return (
             <div id="moosetabs-div">
                 <Nav tabs>
-
-                    <NavItem>
+                    <NavItem className="moose-nav-item">
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '1' })}
                             onClick={() => { this.toggle('1'); }}
                         >
-                            7 Days A Week
+                            Everyday
             </NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="moose-nav-item">
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '2' })}
                             onClick={() => { this.toggle('2'); }}
@@ -156,7 +156,7 @@ export default class MooseTabs extends React.Component {
                             Mon - Fri
             </NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="moose-nav-item">
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '3' })}
                             onClick={() => { this.toggle('3'); }}
@@ -164,7 +164,7 @@ export default class MooseTabs extends React.Component {
                             Monday
             </NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="moose-nav-item">
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '4' })}
                             onClick={() => { this.toggle('4'); }}
@@ -172,7 +172,7 @@ export default class MooseTabs extends React.Component {
                             Tuesday
             </NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="moose-nav-item">
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '5' })}
                             onClick={() => { this.toggle('5'); }}
@@ -180,7 +180,7 @@ export default class MooseTabs extends React.Component {
                             Wednesday
             </NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="moose-nav-item">
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '6' })}
                             onClick={() => { this.toggle('6'); }}
@@ -188,7 +188,7 @@ export default class MooseTabs extends React.Component {
                             Thursday
             </NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="moose-nav-item">
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '7' })}
                             onClick={() => { this.toggle('7'); }}
@@ -196,7 +196,7 @@ export default class MooseTabs extends React.Component {
                             Friday
             </NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="moose-nav-item">
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '8' })}
                             onClick={() => { this.toggle('8'); }}
@@ -204,7 +204,7 @@ export default class MooseTabs extends React.Component {
                             Saturday
             </NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="moose-nav-item">
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '9' })}
                             onClick={() => { this.toggle('9'); }}

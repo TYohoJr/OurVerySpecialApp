@@ -1,5 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css?family=Raleway"); */
-
 .nav-item {
     font-size: 20px;
 }
@@ -20,7 +18,6 @@
 }
 
 .tabsBtns {
-    /* font-family: 'Raleway', sans-serif; */
     background-color:rgba(245, 245, 245, 0.500);
     border:none;
     border-radius: 50px 50px;

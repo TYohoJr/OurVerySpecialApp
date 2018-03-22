@@ -1,5 +1,3 @@
-/* eslint react/no-multi-comp: 0, react/prop-types: 0 */
-
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import axios from "axios";
@@ -28,7 +26,6 @@ export default class Signup extends React.Component {
     }
 
     signUp() {
-        console.log(this.state.username)
         axios.post("/signUpData", { username: this.state.username, password: this.state.password, number: this.state.number }).then((result) => {
             if (result.data === "Sign Up Successful") {
                 this.setState({
@@ -70,10 +67,10 @@ export default class Signup extends React.Component {
                     <ModalBody className="modal-parts">
                         <div><p>Username:</p>
                             <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onUserChange} />
-                            <br/><br/>
+                            <br /><br />
                             <p>Password:</p>
                             <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onPasswordChange} />
-                            <br/><br/>
+                            <br /><br />
                             <p>Phone Number:</p>
                             <input type="text" name="number" placeholder="phone number" value={this.state.number} onChange={this.onNumberChange} />
                         </div>

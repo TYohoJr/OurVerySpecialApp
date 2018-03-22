@@ -76,26 +76,23 @@ export default class App extends Component {
         username: null,
         password: null,
         subscriptions: [],
-        items: [],
         number: null,
-        modal: false, 
-        everyweekday:[],
-        mon:[],
-        tues:[],
-        weds:[],
-        thurs:[],
-        fri:[],
-        sat:[],
-        sun:[],
-        everyDay:[],
+        modal: false,
+        everyweekday: [],
+        mon: [],
+        tues: [],
+        weds: [],
+        thurs: [],
+        fri: [],
+        sat: [],
+        sun: [],
+        everyDay: [],
       }
     }
   }
 
   addRemoveItem(item, serverRoute) {
-    
     axios.post(serverRoute, { item: item.props, token: localStorage.getItem("token"), number: this.state.userProfile.number }).then((result) => {
-     
       this.setState({
         userProfile: result.data.user,
       })
@@ -112,10 +109,8 @@ export default class App extends Component {
 
   signIn() {
     axios.post("/signInData", { username: this.state.username, password: this.state.password }).then((result) => {
-      console.log(result.data.message)
       if (result.data.message === "Login successful!") {
         localStorage.setItem('token', result.data.myToken);
-        debugger
         this.setState({
           userProfile: result.data.user,
           modal: !this.state.modal,
@@ -128,7 +123,6 @@ export default class App extends Component {
 
   testSms() {
     axios.post("/testText", { username: this.state.username, number: this.state.number, token: localStorage.getItem("token") }).then((result) => {
-      console.log(result.data)
     })
   }
 
@@ -137,9 +131,6 @@ export default class App extends Component {
       this.setState({
         userProfile: result.data.user
       })
-      // if (result.data.message) {
-      //   alert(result.data.message)
-      // }
     })
   }
 
@@ -172,14 +163,17 @@ export default class App extends Component {
 
     return (
       <div className="App" >
-        <Navbar2 signIn={this.signIn} places={places}
+        <Navbar2 
+          signIn={this.signIn} 
+          places={places}
           onPasswordChange={this.onPasswordChange}
           onUserChange={this.onUserChange}
           toggle={this.toggle}
           modal={this.state.modal}
           stopSms={this.stopSms}
           userProfile={this.state.userProfile} />
-        <Tabs id="main-tabs-div" places={places}
+        <Tabs id="main-tabs-div" 
+          places={places}
           subscribeToPlace={this.subscribeToPlace}
           addRemoveItem={this.addRemoveItem}
           music={music}

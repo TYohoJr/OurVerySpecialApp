@@ -13,7 +13,7 @@ export default class Profile extends Component {
 
     toggle() {
         let token = localStorage.getItem("token")
-        if(token){
+        if (token) {
             this.setState({
                 modal: !this.state.modal
             });
@@ -30,23 +30,23 @@ export default class Profile extends Component {
 
         return (
             <div id="profile-main">
-                <Button id="show-profile-button" onClick={this.toggle}><img className="tncBtns" src={require("../project-images/profile.png")}/></Button>
+                <Button id="show-profile-button" onClick={this.toggle}><img className="tncBtns" src={require("../project-images/profile.png")} /></Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader >Your Profile</ModalHeader>
                     <ModalBody>
                         <div id="user-profile">
-                           <div id='profile-container'> <div id="profile-box">
+                            <div id='profile-container'> <div id="profile-box">
                                 <div className="profile-base-text">Username: </div>{this.props.userProfile.username}
                                 <div className="profile-base-text">Number: </div>{this.props.userProfile.number}
                                 <br />
                             </div>
-                            <div id="profile-box">
-                                <div className="profile-base-text">Your Subscriptions:</div>
-                                <br />
-                                {subscriptions}
-                                <button id="test-sms" className="profile-buttons" onClick={this.testSms}>Test SMS</button>
-                                <button id="stop-sms" className="profile-buttons" onClick={this.props.stopSms}>Stop All SMS</button>
-                            </div>
+                                <div id="profile-box">
+                                    <div className="profile-base-text">Your Subscriptions:</div>
+                                    <br />
+                                    {subscriptions}
+                                    <button id="test-sms" className="profile-buttons" onClick={this.testSms}>Test SMS</button>
+                                    <button id="stop-sms" className="profile-buttons" onClick={this.props.stopSms}>Stop All SMS</button>
+                                </div>
                             </div>
                         </div>
                     </ModalBody>
@@ -54,22 +54,6 @@ export default class Profile extends Component {
                         <Button color="secondary" onClick={this.toggle}>Close</Button>
                     </ModalFooter>
                 </Modal>
-
-                {/* <div id="user-profile">
-                     <div id="profile-box">
-                        <div className="profile-base-text">Username: </div>{this.props.userProfile.username}
-                        <div className="profile-base-text">Number: </div>{this.props.userProfile.number}
-                        <div className="profile-base-text">Your Subscriptions:</div>
-                        <br/>
-                        {subscriptions}         
-                        <button id="test-sms" className="profile-buttons" onClick={this.testSms}>Test SMS</button>
-                        <button id="stop-sms" className="profile-buttons" onClick={this.props.stopSms}>Stop All SMS</button> 
-                    </div>
-                </div> */}
-
-                {/* <div id="welcome-logo">
-                    <img src={require("../project-images/logo.png")} className="App-logo" alt="logo" /><br />
-                </div> */}
             </div>
         )
     }
