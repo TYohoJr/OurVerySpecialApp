@@ -13,7 +13,7 @@
 }
 
 .active.nav-link {
-    background-color: rgb(61, 189, 221)!important;
+    background-color: #049eec!important;
     color: white!important;
 }
 
@@ -110,4 +110,9 @@
 
 .col-sm-12 {
     width: 100vw;
+    /* background-color:rgba(0, 0, 0, 0.774); */
+}
+
+tr {
+    text-align: center;
 }

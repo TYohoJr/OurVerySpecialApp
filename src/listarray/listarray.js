@@ -1,6 +1,8 @@
 import React from "react";
 import "./listarray.css";
 
+var checkBox;
+
 export default class ListArray extends React.Component {
     constructor(props) {
         super(props);
@@ -30,10 +32,15 @@ export default class ListArray extends React.Component {
     }
 
     render() {
+        let token = localStorage.getItem("token")
+        if(token){
+            checkBox = <input type="checkbox" onChange={this.runListItem}/>
+        }
+
         return (
             <div>
                 <br />
-                <input type="checkbox" onChange={this.runListItem} /><div className="moose-list-text">{this.props.listItem}</div>
+                {checkBox}<div className="moose-list-text">{this.props.listItem}</div>
             </div>
         )
     }
