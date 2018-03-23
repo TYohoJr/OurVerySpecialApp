@@ -87,6 +87,7 @@ export default class App extends Component {
         sun: [],
         everyDay: [],
       }
+      
     }
   }
 
@@ -119,6 +120,7 @@ export default class App extends Component {
       }
     })
   }
+  
 
   testSms() {
     debugger
@@ -152,6 +154,8 @@ export default class App extends Component {
     })
   }
 
+
+
   render() {
 
     window.onbeforeunload = function (e) {
@@ -168,6 +172,9 @@ export default class App extends Component {
           places={places}
           onPasswordChange={this.onPasswordChange}
           onUserChange={this.onUserChange}
+          onCommentChange={this.onCommentChange}
+          onEmailChange={this.onEmailChange}
+          onFacebookUrlChange={this.onEmailChange}
           toggle={this.toggle}
           modal={this.state.modal}
           stopSms={this.stopSms}

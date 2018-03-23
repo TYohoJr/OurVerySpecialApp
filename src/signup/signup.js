@@ -8,9 +8,9 @@ export default class Signup extends React.Component {
         super();
         this.state = {
             modal: false,
-            number: "",
-            password: "",
-            username: ""
+            number: '',
+            password: '',
+            username: ''
         }
         this.toggle = this.toggle.bind(this);
         this.signUp = this.signUp.bind(this);
@@ -35,7 +35,7 @@ export default class Signup extends React.Component {
                     modal: !this.state.modal,
                 })
             } else {
-                alert(`${result.data}`)
+                alert(result.data)
             }
         })
     }
@@ -63,7 +63,7 @@ export default class Signup extends React.Component {
             <div>
                 <Button id="signup-button" color="danger" onClick={this.toggle}>Sign Up</Button>
                 <Modal id="signUpModal" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader className="modal-parts" toggle={this.toggle}>Sign up below</ModalHeader>
+                    <ModalHeader className="modal-parts" toggle={this.toggle}>Sign Up Below</ModalHeader>
                     <ModalBody className="modal-parts">
                         <div>
                             <p>Username:</p>

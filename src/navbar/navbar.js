@@ -64,7 +64,7 @@ export default class Navbar2 extends React.Component {
               <div>
                 <UncontrolledDropdown id="navbar-dropdown" nav inNavbar>
                   <DropdownToggle nav caret>
-                    Sign in/up
+                    Log In / Sign Up
                 </DropdownToggle>
                   <DropdownMenu id="dropdown-menu">
                     <div className="dropdown-item">

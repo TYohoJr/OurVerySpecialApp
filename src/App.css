@@ -74,13 +74,9 @@
 }
 
 input {
-  box-shadow: 3px 3px 10px rgb(0, 0, 0)
+  box-shadow: .5px .5px 8px rgb(0, 0, 0)
 }
 
 .navbar-light .navbar-nav .nav-link {
   color: white!important;
-}
-
-#main-tabs-div {
-  background-color: blueviolet
 }

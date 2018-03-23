@@ -18,7 +18,7 @@ export default class Signin extends React.Component {
             <div>
                 <Button id="signin-button" onClick={this.props.toggle}>Log In</Button>
                 <Modal id="signInModal" isOpen={this.props.modal} toggle={this.props.toggle} className={this.props.className}>
-                    <ModalHeader className="modal-parts" toggle={this.props.toggle}>Please sign in</ModalHeader>
+                    <ModalHeader className="modal-parts" toggle={this.props.toggle}>Please Log In</ModalHeader>
                     <ModalBody className="modal-parts" id="modal-body">
                         <div>
                             <p>Username:</p>
@@ -30,7 +30,7 @@ export default class Signin extends React.Component {
                         </div>
                     </ModalBody>
                     <ModalFooter className="modal-parts">
-                        <Button color="dark" onClick={this.props.signIn}>Sign In</Button>{' '}
+                        <Button color="dark" onClick={this.props.signIn}>Log In</Button>{' '}
                     </ModalFooter>
                 </Modal>
                 <br />

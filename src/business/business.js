@@ -2,14 +2,23 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import "./business.css";
-
+import axios from "axios";
 export default class Biz extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            modal: false
-        };
         this.toggle = this.toggle.bind(this);
+        this.onCommentsChange = this.onCommentsChange.bind(this);
+        this.onFacebookUrlChange = this.onFacebookUrlChange.bind(this);
+        this.onEmailChange = this.onEmailChange.bind(this);
+        this.onPasswordChange = this.onPasswordChange.bind(this);
+        this.bizSignUp = this.bizSignUp.bind(this);
+        this.state = {
+            modal: false,
+            email: '',
+            password: '',
+            facebookUrl: '',
+            comments: '',
+        };
     }
 
     toggle() {
@@ -18,26 +27,68 @@ export default class Biz extends React.Component {
         });
     }
 
+    bizSignUp() {
+        debugger
+        axios.post("/signUpBiz", { email: this.state.email, password: this.state.password, comments: this.state.comments, facebookUrl: this.state.facebookUrl }).then((result) => {
+            if (result.data === "Sign Up Successful") {
+                this.setState({
+                    email: "",
+                    facebookUrl: "",
+                    comments: "",
+                    password: "",
+                    modal: !this.state.modal,
+                })
+            } else {
+                alert(result.data)
+            }
+        })
+    }
+
+    onCommentsChange = (e) => {
+        this.setState({
+            comments: (e.target.value)
+        })
+    }
+
+    onFacebookUrlChange = (e) => {
+        this.setState({
+            facebookUrl: (e.target.value)
+        })
+    }
+
+    onEmailChange = (e) => {
+        this.setState({
+            email: (e.target.value)
+        })
+    }
+
+    onPasswordChange = (e) => {
+        this.setState({
+            password: (e.target.value)
+        })
+    }
+
+
     render() {
         return (
             <div>
                 <Button id="businessSignUp" color="danger" onClick={this.toggle}>For Business</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Business Sign Up Form</ModalHeader>
-                    <ModalBody>
+                    <ModalHeader className='businessModal' toggle={this.toggle}>Business Sign Up Form</ModalHeader>
+                    <ModalBody className='businessModal'>
                         <Form>
                             <FormGroup>
                                 <Label for="exampleEmail">Email</Label>
-                                <Input type="email" name="email" id="exampleEmail" placeholder="Must be a valid email" />
+                                <Input type="email" name="email" id="exampleEmail" placeholder="Must be a valid email" value={this.state.email} onChange={this.onEmailChange} />
                             </FormGroup>
                             <FormGroup>
-                                <Label for="exampleEmail">Facebook URL</Label>
-                                <Input type="email" name="email" id="exampleEmail" placeholder="Paste your business Facebook URL here" />
+                                <Label for="exampleUrl">Facebook URL</Label>
+                                <Input type="text" name="email" id="exampleEmail" placeholder="Paste your business Facebook URL here" value={this.state.facebookUrl} onChange={this.onFacebookUrlChange} />
                             </FormGroup>
 
                             <FormGroup>
                                 <Label for="examplePassword">Password</Label>
-                                <Input type="password" name="password" id="examplePassword" placeholder="password" />
+                                <Input type="password" name="password" id="examplePassword" placeholder="Password" value={this.state.password} onChange={this.onPasswordChange} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="exampleSelect">Select Approximate Time You Will Post Lunch Speicals</Label>
@@ -56,20 +107,12 @@ export default class Biz extends React.Component {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="exampleText">Any additional comments</Label>
-                                <Input type="textarea" name="text" id="exampleText" />
+                                <Input type="textarea" name="text" id="exampleText" value={this.state.comments} onChange={this.onCommentsChange} />
                             </FormGroup>
-                            <FormGroup>
-                                <Label for="exampleFile">Upload Logo</Label>
-                                <Input type="file" name="file" id="exampleFile" />
-                                <FormText color="muted">
-                                    This is some placeholder block-level help text for the above input.
-                                    It's a bit lighter and easily wraps to a new line.
-                                </FormText>
-                            </FormGroup>
-                            <Button>Submit</Button>
                         </Form>
                     </ModalBody>
-                    <ModalFooter>
+                    <ModalFooter className='businessModal'>
+                        <Button color="primary" onClick={this.bizSignUp}>Submit</Button>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>

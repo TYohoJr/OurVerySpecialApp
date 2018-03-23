@@ -19,3 +19,7 @@
     border: none!important;
     color: rgb(0, 0, 0);
 }
+
+.modal-parts {
+    background-color:#343a40a4!important;
+}

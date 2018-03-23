@@ -1,5 +1,26 @@
 #businessSignUp {
-    background-color: #343a40;
+    background-color: #1964af;
     border: none;
     box-shadow: 1px 1px 5px rgb(0, 0, 0)
+}
+
+.modal.show {
+    background-color: rgba(0, 0, 0, 0.548)
+}
+
+label {
+    font-size: 16px;
+    text-align: center;
+}
+
+.businessModal {
+    background-color:#343a40a4;
+}
+
+.businessModal.modal-body {
+    background-color:#343a40a4;
+}
+
+.form-control {
+    box-shadow: .5px .5px 8px rgb(0, 0, 0)
 }
