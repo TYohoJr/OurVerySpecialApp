@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
-import Profile from "../profile/profile.js";
+import { Button, Popover, PopoverBody } from 'reactstrap';
 import "./popover.css"
 
 export default class Popover1 extends React.Component {
@@ -22,7 +21,7 @@ export default class Popover1 extends React.Component {
         return (
             <div>
                 <Button id="Popover1" onClick={this.toggle}>
-                    <img className="tncBtns" src={require("../project-images/profile.png")} />
+                    <img className="tncBtns" src={require("../project-images/profile.png")} alt="profile"/>
                 </Button>
                 <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
                     <PopoverBody><div id="popover-text">Please login to view profile</div></PopoverBody>

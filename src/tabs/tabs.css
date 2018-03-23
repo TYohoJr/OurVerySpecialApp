@@ -107,3 +107,7 @@
 #MooseTabs-div {
     margin: 30px
 }
+
+.col-sm-12 {
+    width: 100vw;
+}

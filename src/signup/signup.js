@@ -65,7 +65,8 @@ export default class Signup extends React.Component {
                 <Modal id="signUpModal" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader className="modal-parts" toggle={this.toggle}>Sign up below</ModalHeader>
                     <ModalBody className="modal-parts">
-                        <div><p>Username:</p>
+                        <div>
+                            <p>Username:</p>
                             <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onUserChange} />
                             <br /><br />
                             <p>Password:</p>

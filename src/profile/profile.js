@@ -30,7 +30,7 @@ export default class Profile extends Component {
 
         return (
             <div id="profile-main">
-                <Button id="show-profile-button" onClick={this.toggle}><img className="tncBtns" src={require("../project-images/profile.png")} /></Button>
+                <Button id="show-profile-button" onClick={this.toggle}><img className="tncBtns" src={require("../project-images/profile.png")} alt="profile"/></Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader >Your Profile</ModalHeader>
                     <ModalBody>
@@ -44,7 +44,7 @@ export default class Profile extends Component {
                                     <div className="profile-base-text">Your Subscriptions:</div>
                                     <br />
                                     {subscriptions}
-                                    <button id="test-sms" className="profile-buttons" onClick={this.testSms}>Test SMS</button>
+                                    <button id="test-sms" className="profile-buttons" onClick={this.props.testSms}>Test SMS</button>
                                     <button id="stop-sms" className="profile-buttons" onClick={this.props.stopSms}>Stop All SMS</button>
                                 </div>
                             </div>

@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Tabs from "./tabs/tabs.js";
 import axios from "axios";
 import Navbar2 from "./navbar/navbar.js";
-import Profile from "./profile/profile";
 
 var places = [
   {
@@ -122,12 +121,13 @@ export default class App extends Component {
   }
 
   testSms() {
-    axios.post("/testText", { username: this.state.username, number: this.state.number, token: localStorage.getItem("token") }).then((result) => {
+    debugger
+    axios.post("/testText", { username: this.state.username, number: this.state.userProfile.number, token: localStorage.getItem("token") }).then((result) => {
     })
   }
 
   stopSms() {
-    axios.post("/stopText", { username: this.state.username, number: this.state.number, token: localStorage.getItem("token") }).then((result) => {
+    axios.post("/stopText", { username: this.state.username, number: this.state.userProfile.number, token: localStorage.getItem("token") }).then((result) => {
       this.setState({
         userProfile: result.data.user
       })
@@ -171,7 +171,8 @@ export default class App extends Component {
           toggle={this.toggle}
           modal={this.state.modal}
           stopSms={this.stopSms}
-          userProfile={this.state.userProfile} />
+          userProfile={this.state.userProfile} 
+          testSms={this.testSms}/>
         <Tabs id="main-tabs-div" 
           places={places}
           subscribeToPlace={this.subscribeToPlace}

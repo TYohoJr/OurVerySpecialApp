@@ -7,8 +7,7 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
-  Button
+  DropdownItem
 } from 'reactstrap';
 import Signin from "../signin/signin.js";
 import Biz from "../business/business.js";
@@ -44,10 +43,10 @@ export default class Navbar2 extends React.Component {
     let token = localStorage.getItem("token");
     if (token) {
       showProfile =
-        <Profile stopSms={this.props.stopSms} userProfile={this.props.userProfile} />
+        <Profile stopSms={this.props.stopSms} userProfile={this.props.userProfile} testSms={this.props.testSms}/>
     } else {
       showProfile =
-        <Popover1 stopSms={this.props.stopSms} userProfile={this.props.userProfile} />
+        <Popover1 stopSms={this.props.stopSms} userProfile={this.props.userProfile} testSms={this.props.testSms}/>
     }
 
     return (

@@ -11,6 +11,7 @@ export default class MusicButton extends React.Component {
         let token = localStorage.getItem("token")
         if (token) {
             this.props.subscribeToPlace(this.props.music.name, this.props.music.time)
+            alert("Added To Your Profile")
         } else {
             alert("You must be signed in to subscribe to alerts")
         }

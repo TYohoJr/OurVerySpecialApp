@@ -1,7 +1,6 @@
 import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
-import SitePopover from '../modal/modal.js';
 import "./moosetabs.css";
 import Userlist from "../userlist/userlist.js";
 import ListArray from "../listarray/listarray.js"
