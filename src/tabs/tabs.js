@@ -3,9 +3,16 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap
 import classnames from 'classnames';
 import "./tabs.css";
 import { Table } from 'reactstrap';
-import FoodButton from "../FoodButton/FoodButton";
+import FoodButton from "../FoodButton/FoodButton.js";
 import MooseTabs from "../moosetabs/moosetabs.js";
 import MusicButton from "../MusicButton/MusicButton.js";
+import Facebook from "../facebook/facebook.js";
+
+var facebookFoodData = [
+  "https://www.facebook.com/Town-Country-Foods-148368425076/",
+  "https://www.facebook.com/heebsgrocery/",
+  "https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/",
+]
 
 export default class Tabs extends React.Component {
   constructor(props) {
@@ -29,6 +36,14 @@ export default class Tabs extends React.Component {
       return (
         <th key={i}>
           <FoodButton subscribeToPlace={this.props.subscribeToPlace} place={p} />
+        </th>
+      )
+    });
+
+    let facebookFoodDiv = facebookFoodData.map((p, i) => {
+      return (
+        <th key={i}>
+          <Facebook place={p} />
         </th>
       )
     });
@@ -80,16 +95,8 @@ export default class Tabs extends React.Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>
-                        <div class="fb-page" width="380" data-href="https://www.facebook.com/Town-Country-Foods-148368425076/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Town-Country-Foods-148368425076/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Town-Country-Foods-148368425076/">Town &amp; Country Foods</a></blockquote></div>
-                      </td>
-                      <td>
-                        <div class="fb-page" width="380" data-href="https://www.facebook.com/heebsgrocery/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/heebsgrocery/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/heebsgrocery/">Heeb&#039;s East Main Grocery</a></blockquote></div>
-                      </td>
-                      <td>
-                        <div class="fb-page" width="380" data-href="https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/">Dave&#039;s Sushi - Off Main</a></blockquote></div>
-                      </td>
+                    <tr id="facebook-plugins">
+                      {facebookFoodDiv}
                     </tr>
                   </tbody>
                 </Table>
