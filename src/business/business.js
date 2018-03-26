@@ -2,16 +2,11 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import "./business.css";
-import axios from "axios";
 export default class Biz extends React.Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
-        this.onCommentsChange = this.onCommentsChange.bind(this);
-        this.onFacebookUrlChange = this.onFacebookUrlChange.bind(this);
-        this.onEmailChange = this.onEmailChange.bind(this);
-        this.onPasswordChange = this.onPasswordChange.bind(this);
-        this.bizSignUp = this.bizSignUp.bind(this);
+        this.runBizSignUp = this.runBizSignUp.bind(this);
         this.state = {
             modal: false,
             email: '',
@@ -27,40 +22,31 @@ export default class Biz extends React.Component {
         });
     }
 
-    bizSignUp() {
-        debugger
-        axios.post("/signUpBiz", { email: this.state.email, password: this.state.password, comments: this.state.comments, facebookUrl: this.state.facebookUrl }).then((result) => {
-            if (result.data === "Sign Up Successful") {
-                this.setState({
-                    email: "",
-                    facebookUrl: "",
-                    comments: "",
-                    password: "",
-                    modal: !this.state.modal,
-                })
-            } else {
-                alert(result.data)
-            }
+    runBizSignUp() {
+        this.props.bizSignUp().then((result)=>{
+            this.setState({
+                modal:!this.state.modal
+            })
         })
     }
 
-    onCommentsChange = (e) => {
-        this.setState({
-            comments: (e.target.value)
-        })
-    }
+    // onCommentsChange = (e) => {
+    //     this.setState({
+    //         comments: (e.target.value)
+    //     })
+    // }
 
-    onFacebookUrlChange = (e) => {
-        this.setState({
-            facebookUrl: (e.target.value)
-        })
-    }
+    // onFacebookUrlChange = (e) => {
+    //     this.setState({
+    //         facebookUrl: (e.target.value)
+    //     })
+    // }
 
-    onEmailChange = (e) => {
-        this.setState({
-            email: (e.target.value)
-        })
-    }
+    // onEmailChange = (e) => {
+    //     this.setState({
+    //         email: (e.target.value)
+    //     })
+    // }
 
     onPasswordChange = (e) => {
         this.setState({
@@ -79,16 +65,16 @@ export default class Biz extends React.Component {
                         <Form>
                             <FormGroup>
                                 <Label for="exampleEmail">Email</Label>
-                                <Input type="email" name="email" id="exampleEmail" placeholder="Must be a valid email" value={this.state.email} onChange={this.onEmailChange} />
+                                <Input type="email" name="email" id="exampleEmail" placeholder="Must be a valid email" value={this.props.email} onChange={this.props.onEmailChange} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="exampleUrl">Facebook URL</Label>
-                                <Input type="text" name="email" id="exampleEmail" placeholder="Paste your business Facebook URL here" value={this.state.facebookUrl} onChange={this.onFacebookUrlChange} />
+                                <Input type="text" name="email" id="exampleEmail" placeholder="Paste your business Facebook URL here" value={this.props.facebookUrl} onChange={this.props.onFacebookUrlChange} />
                             </FormGroup>
 
                             <FormGroup>
                                 <Label for="examplePassword">Password</Label>
-                                <Input type="password" name="password" id="examplePassword" placeholder="Password" value={this.state.password} onChange={this.onPasswordChange} />
+                                <Input type="password" name="password" id="examplePassword" placeholder="Password" value={this.props.password} onChange={this.props.onPasswordChange} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="exampleSelect">Select Approximate Time You Will Post Lunch Speicals</Label>
@@ -107,12 +93,12 @@ export default class Biz extends React.Component {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="exampleText">Any additional comments</Label>
-                                <Input type="textarea" name="text" id="exampleText" value={this.state.comments} onChange={this.onCommentsChange} />
+                                <Input type="textarea" name="text" id="exampleText" value={this.props.comments} onChange={this.props.onCommentsChange} />
                             </FormGroup>
                         </Form>
                     </ModalBody>
                     <ModalFooter className='businessModal'>
-                        <Button color="primary" onClick={this.bizSignUp}>Submit</Button>
+                        <Button color="primary" onClick={this.runBizSignUp}>Submit</Button>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>

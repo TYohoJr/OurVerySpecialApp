@@ -8,19 +8,6 @@ import MooseTabs from "../moosetabs/moosetabs.js";
 import MusicButton from "../MusicButton/MusicButton.js";
 import Facebook from "../facebook/facebook.js";
 
-var facebookFoodData = [
-  "https://www.facebook.com/Town-Country-Foods-148368425076/",
-  "https://www.facebook.com/heebsgrocery/",
-  "https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/",
-  "https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/",
-]
-
-var facebookMusicData = [
-  "https://www.facebook.com/fillingstationmontana/",
-  "https://www.facebook.com/zebracocktaillounge/",
-  "https://www.facebook.com/therialto/",
-]
-
 export default class Tabs extends React.Component {
   constructor(props) {
     super(props);
@@ -42,15 +29,15 @@ export default class Tabs extends React.Component {
     let foodButtons = this.props.places.map((p, i) => {
       return (
         <th key={i}>
-          <FoodButton subscribeToPlace={this.props.subscribeToPlace} place={p} />
+          <FoodButton subscribeToPlace={this.props.subscribeToPlace} places={p} />
         </th>
       )
     });
 
-    let facebookFoodDiv = facebookFoodData.map((p, i) => {
+    let facebookFoodDiv = this.props.places.map((p, i) => {
       return (
         <th key={i}>
-          <Facebook place={p} />
+          <Facebook places={p} />
         </th>
       )
     });
@@ -63,13 +50,14 @@ export default class Tabs extends React.Component {
       )
     })
 
-    let facebookMusicDiv = facebookMusicData.map((p, i) => {
+    let facebookMusicDiv = this.props.music.map((p, i) => {
       return (
         <th key={i}>
-          <Facebook place={p} />
+          <Facebook places={p} />
         </th>
       )
     });
+    console.log(facebookFoodDiv)
 
     return (
       <div>
@@ -107,7 +95,7 @@ export default class Tabs extends React.Component {
                 <div className="table-container">
                   <thead>
                     <tr>
-                      {foodButtons}
+                      {/* {foodButtons} */}
                     </tr>
                   </thead>
                   <tbody>

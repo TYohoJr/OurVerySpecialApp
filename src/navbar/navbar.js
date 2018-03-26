@@ -76,7 +76,8 @@ export default class Navbar2 extends React.Component {
                       <Signup />
                     </DropdownItem>
                     <DropdownItem>
-                      <Biz />
+                      <Biz bizSignUp={this.props.bizSignUp} onUserChange={this.props.onUserChange} onPasswordChange={this.props.onPasswordChange} 
+                      onFacebookUrlChange={this.props.onFacebookUrlChange} onCommentsChange={this.props.onCommentsChange} onEmailChange={this.props.onEmailChange}/>
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
