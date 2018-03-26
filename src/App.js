@@ -5,46 +5,46 @@ import Tabs from "./tabs/tabs.js";
 import axios from "axios";
 import Navbar2 from "./navbar/navbar.js";
 
-var places = [
-  {
-    name: "Town and Country",
-    url: "https://www.facebook.com/Town-Country-Foods-148368425076/",
-    links: {
-      company: "http://tncfoods.com/",
-      review: "https://www.yelp.com/biz/daves-sushi-bozeman-2"
-    }
-  },
-  {
-    name: "Heebs",
-    time: '0 10 * * *',
-    links: {
-      company: "http://heebsgrocery.com/",
-      review: "https://www.yelp.com/biz/heebs-east-main-grocery-bozeman"
-    },
-    url: "https://www.facebook.com/heebsgrocery/",
+// var places = [
+//   {
+//     name: "Town and Country",
+//     url: "https://www.facebook.com/Town-Country-Foods-148368425076/",
+//     links: {
+//       company: "http://tncfoods.com/",
+//       review: "https://www.yelp.com/biz/daves-sushi-bozeman-2"
+//     }
+//   },
+//   {
+//     name: "Heebs",
+//     time: '0 10 * * *',
+//     links: {
+//       company: "http://heebsgrocery.com/",
+//       review: "https://www.yelp.com/biz/heebs-east-main-grocery-bozeman"
+//     },
+//     url: "https://www.facebook.com/heebsgrocery/",
 
-  },
-  {
-    name: "Dave's Sushi",
-    time: '0 13 * * *',
-    links: {
-      company: "http://www.daves-sushi.com",
-      review: "https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country"
-    },
-    url: "https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/",
+//   },
+//   {
+//     name: "Dave's Sushi",
+//     time: '0 13 * * *',
+//     links: {
+//       company: "http://www.daves-sushi.com",
+//       review: "https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country"
+//     },
+//     url: "https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/",
 
-  },
-  {
-    name: "Dave's Sushi",
-    time: '0 13 * * *',
-    links: {
-      company: "http://www.daves-sushi.com",
-      review: "https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country"
-    },
-    url: "https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/",
+//   },
+//   {
+//     name: "Dave's Sushi",
+//     time: '0 13 * * *',
+//     links: {
+//       company: "http://www.daves-sushi.com",
+//       review: "https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country"
+//     },
+//     url: "https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/",
 
-  },
-];
+//   },
+// ];
 
 var music = [
   {
@@ -107,10 +107,18 @@ export default class App extends Component {
         sun: [],
         everyDay: [],
       },
-      places: [{
-        url:""
-      }]
+      places: []
     }
+  }
+
+  componentDidMount(){
+    
+    axios.get("/getData").then((result)=>{
+      
+      this.setState({
+        places:result.data.user.places
+      })
+    })
   }
 
   bizSignUp() {
@@ -118,11 +126,9 @@ export default class App extends Component {
       axios.post("/signUpBiz", { email: this.state.email, password: this.state.password, comments: this.state.comments, facebookUrl: this.state.facebookUrl }).then((result) => {
         debugger
         if (result.data.message === 'Business sign up was successfull!') {
-          this.setState({
-            places: result.data.user.places
-          })
-
-
+          // this.setState({
+          //   places: result.data.user.places
+          // })
           alert(result.data.message)
           resolve();
         } else {
@@ -130,7 +136,6 @@ export default class App extends Component {
         }
       })
     })
-    
   }
 
   addRemoveItem(item, serverRoute) {
