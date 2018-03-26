@@ -29,7 +29,15 @@ var places = [
       company: "http://www.daves-sushi.com",
       review: "https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country"
     }
-  }
+  },
+  {
+    name: "Dave's Sushi",
+    time: '0 13 * * *',
+    links: {
+      company: "http://www.daves-sushi.com",
+      review: "https://www.yelp.com/biz/town-and-country-foods-bozeman-2?osq=town+and+country"
+    }
+  },
 ];
 
 var music = [

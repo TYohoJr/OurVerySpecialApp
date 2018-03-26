@@ -12,6 +12,13 @@ var facebookFoodData = [
   "https://www.facebook.com/Town-Country-Foods-148368425076/",
   "https://www.facebook.com/heebsgrocery/",
   "https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/",
+  "https://www.facebook.com/Daves-Sushi-Off-Main-167896217894/",
+]
+
+var facebookMusicData = [
+  "https://www.facebook.com/fillingstationmontana/",
+  "https://www.facebook.com/zebracocktaillounge/",
+  "https://www.facebook.com/therialto/",
 ]
 
 export default class Tabs extends React.Component {
@@ -56,6 +63,14 @@ export default class Tabs extends React.Component {
       )
     })
 
+    let facebookMusicDiv = facebookMusicData.map((p, i) => {
+      return (
+        <th key={i}>
+          <Facebook place={p} />
+        </th>
+      )
+    });
+
     return (
       <div>
         <Nav id="tabs" tabs>
@@ -89,16 +104,18 @@ export default class Tabs extends React.Component {
             <Row>
               <Col sm="12">
                 <Table className="table1">
+                <div className="table-container">
                   <thead>
                     <tr>
                       {foodButtons}
                     </tr>
                   </thead>
                   <tbody>
-                    <tr id="facebook-plugins">
+                    <tr className="facbook-plugins-div">
                       {facebookFoodDiv}
                     </tr>
                   </tbody>
+                  </div>
                 </Table>
               </Col>
             </Row>
@@ -107,21 +124,18 @@ export default class Tabs extends React.Component {
             <Row>
               <Col sm="12">
                 <Table>
+                <div className="table-container">
                   <thead>
                     <tr>
                       {musicButtons}
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>
-                        <div class="fb-page" width="380" data-href="https://www.facebook.com/fillingstationmontana/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/fillingstationmontana/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fillingstationmontana/">The Filling Station</a></blockquote></div>                      </td>
-                      <td>
-                        <div class="fb-page" width="380" data-href="https://www.facebook.com/zebracocktaillounge/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/zebracocktaillounge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/zebracocktaillounge/">Zebra Cocktail Lounge</a></blockquote></div>                      </td>
-                      <td>
-                        <div class="fb-page" width="380" data-href="https://www.facebook.com/therialto/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/therialto/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/therialto/">Rialto Bozeman</a></blockquote></div>                      </td>
+                    <tr className="facbook-plugins-div">
+                      {facebookMusicDiv}
                     </tr>
                   </tbody>
+                  </div>
                 </Table>
               </Col>
             </Row>

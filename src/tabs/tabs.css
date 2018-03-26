@@ -29,7 +29,10 @@
 
 .fb-page {
     background-color: rgb(98, 98, 98)!important;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0)
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    width:480px;
+    height:600px;
+    padding-top: 45px;
 }
 
 .tncBtns {
@@ -114,4 +117,15 @@
 
 tr {
     text-align: center;
+}
+
+.table-container {
+    height: 700px;
+    width: 1600px;
+    overflow: scroll;
+    margin: 0px;
+}
+
+#test-div {
+    width:200px
 }
