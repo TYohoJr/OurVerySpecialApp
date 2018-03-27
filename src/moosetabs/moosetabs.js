@@ -230,7 +230,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Everyday Specials<br /> {checkboxText}</CardTitle>
+                                        <CardTitle>Everyday Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <ListArray listItem={everyDay[0]} addRemoveItem={this.props.addRemoveItem} userProfile={this.props.userProfile} />
                                             <ListArray listItem={everyDay[1]} addRemoveItem={this.props.addRemoveItem} />
@@ -254,7 +254,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Your Saved Specials<br /> {checkboxText}</CardTitle>
+                                        <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
                                         </CardText>
@@ -268,7 +268,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Every Weekday Special<br /> {checkboxText}</CardTitle>
+                                        <CardTitle>Every Weekday Special<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <ListArray listItem={everyWeekDay[0]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={everyWeekDay[1]} addRemoveItem={this.props.addRemoveItem} />
@@ -283,8 +283,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Your Saved Specials
-                                        </CardTitle>
+                                        <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
                                         </CardText>
@@ -298,7 +297,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Monday Specials<br /> {checkboxText}</CardTitle>
+                                        <CardTitle>Monday Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <ListArray listItem={monday[0]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={monday[1]} addRemoveItem={this.props.addRemoveItem} />
@@ -317,7 +316,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Your Saved Specials</CardTitle>
+                                    <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
                                         </CardText>
@@ -331,7 +330,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Tuesday Specials<br /> {checkboxText}</CardTitle>
+                                        <CardTitle>Tuesday Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <ListArray listItem={tuesday[0]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={tuesday[1]} addRemoveItem={this.props.addRemoveItem} />
@@ -348,7 +347,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Your Saved Specials</CardTitle>
+                                    <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
                                         </CardText>
@@ -362,7 +361,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Wednesday Specials<br /> {checkboxText}</CardTitle>
+                                        <CardTitle>Wednesday Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <ListArray listItem={wednesday[0]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={wednesday[1]} addRemoveItem={this.props.addRemoveItem} />
@@ -380,7 +379,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Your Saved Specials</CardTitle>
+                                    <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
                                         </CardText>
@@ -394,7 +393,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Thursday Specials<br /> {checkboxText}</CardTitle>
+                                        <CardTitle>Thursday Specials<br /><div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <ListArray listItem={thursday[0]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={thursday[1]} addRemoveItem={this.props.addRemoveItem} />
@@ -413,7 +412,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Your Saved Specials</CardTitle>
+                                    <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
                                         </CardText>
@@ -427,7 +426,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Friday Specials<br /> {checkboxText}</CardTitle>
+                                        <CardTitle>Friday Specials<br /><div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <ListArray listItem={friday[0]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={friday[1]} addRemoveItem={this.props.addRemoveItem} />
@@ -446,7 +445,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Your Saved Specials</CardTitle>
+                                    <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
                                         </CardText>
@@ -460,7 +459,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Saturday Specials<br /> {checkboxText}</CardTitle>
+                                        <CardTitle>Saturday Specials<br /><div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <ListArray listItem={saturday[0]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={saturday[1]} addRemoveItem={this.props.addRemoveItem} />
@@ -477,7 +476,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Your Saved Specials</CardTitle>
+                                    <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
                                         </CardText>
@@ -491,7 +490,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Sunday Specials<br /> {checkboxText}</CardTitle>
+                                        <CardTitle>Sunday Specials<br /><div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <ListArray listItem={sunday[0]} addRemoveItem={this.props.addRemoveItem} />
                                             <ListArray listItem={sunday[1]} addRemoveItem={this.props.addRemoveItem} />
@@ -508,7 +507,7 @@ export default class MooseTabs extends React.Component {
                             <Col sm="6">
                                 <Card body>
                                     <div className="moosetabs-text">
-                                        <CardTitle>Your Saved Specials</CardTitle>
+                                    <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
                                             <Userlist userProfile={this.props.userProfile} />
                                         </CardText>

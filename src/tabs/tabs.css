@@ -28,7 +28,7 @@
 }
 
 .fb-page {
-    background-color: rgb(98, 98, 98)!important;
+    background-color: rgb(63, 63, 63)!important;
     box-shadow: 5px 5px 10px rgb(0, 0, 0);
     width:480px;
     height:600px;
@@ -61,6 +61,8 @@
     width:33.33%;
     color:white;
     background: #000000cc;
+    letter-spacing: 1px;
+
 }
 
 .nav-item2 {
@@ -68,6 +70,8 @@
     width: 33.33%;
     background: #000000cc;
     color:white;
+    letter-spacing: 1px;
+
 }
 
 .nav-item3 {
@@ -75,6 +79,8 @@
     width: 33.33%;
     background: #000000cc;
     color:white;
+    letter-spacing: 1px;
+
 }
 
 #tabs {

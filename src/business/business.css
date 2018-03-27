@@ -15,6 +15,8 @@ label {
 
 .businessModal {
     background-color:#343a40a4;
+    color:rgb(153, 153, 153);
+    font-size:20px;
 }
 
 .businessModal.modal-body {

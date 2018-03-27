@@ -56,9 +56,9 @@ export default class Navbar2 extends React.Component {
             {showProfile}
           </div>
           <div id="welcome-logo">
-            <img src={require("../project-images/logo.png")} className="App-logo" alt="logo" /><br />
+            {/* <img src={require("../project-images/background3.png")} className="App-logo" alt="logo" /><br /> */}
           </div>
-          <NavbarToggler onClick={this.toggle} number={this.props.number} />
+         <NavbarToggler onClick={this.toggle} number={this.props.number} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav id="navbar-buttons" className="ml-auto" navbar>
               <div>

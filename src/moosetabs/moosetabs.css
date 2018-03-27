@@ -10,7 +10,8 @@ li {
     padding:10px;
     color:rgb(17, 13, 13);
     background-color: rgb(98, 98, 98)!important;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0)
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    margin:10px
 
 }
 
@@ -19,9 +20,9 @@ li {
     font-size: 16px;
     background-color: rgb(98, 98, 98)!important;
     color: rgb(255, 255, 255)!important;
-    text-shadow: 2px 2px black;
+    text-shadow: 1px 1px black;
     height: 500px;
-    overflow: scroll
+    overflow: scroll;
 }
 
 .nav-link.active {
@@ -39,4 +40,10 @@ li {
 .moose-nav-item {
     width: 11.1111111%!important;
     text-align: center;
+}
+
+.checkboxtext {
+    color:black;
+    font-size:22px;
+    text-shadow:none;
 }

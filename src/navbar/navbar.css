@@ -7,6 +7,14 @@
     flex-direction: row;
     align-items:flex-start;
     justify-content: flex-end;
+    background-image:url('../project-images/background3.png');
+    height:298px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: cover;
+    margin:10px;
+    margin-bottom:50px;
+    
 }
 
 #dropdown-menu {
@@ -14,21 +22,25 @@
 }
 
 #dropdown-menu.show {
-    background-color: #ffffff!important;
+    background-color: #494949!important;
+    width:191px;
+    border:solid black 2px;
 }
 
 #navbar-dropdown {
     background-color:#343a40!important;
-    color: #ffffff!important;
     margin-right: 10px;
+    border-radius: 5px;
 }
 
 #navbar-dropdown:hover {
     font-style: normal!important;
+    
 }
 
 .dropdown-toggle.show {
     color:white!important;
+    background-color:black!important;
 }
 
 #welcome-logo {
@@ -42,3 +54,5 @@
     color: #ffffff!important;
     margin-right: 10px;
 }
+
+
