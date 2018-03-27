@@ -23,37 +23,12 @@ export default class Biz extends React.Component {
     }
 
     runBizSignUp() {
-        this.props.bizSignUp().then((result)=>{
+        this.props.bizSignUp().then((result) => {
             this.setState({
-                modal:!this.state.modal
+                modal: !this.state.modal
             })
         })
     }
-
-    // onCommentsChange = (e) => {
-    //     this.setState({
-    //         comments: (e.target.value)
-    //     })
-    // }
-
-    // onFacebookUrlChange = (e) => {
-    //     this.setState({
-    //         facebookUrl: (e.target.value)
-    //     })
-    // }
-
-    // onEmailChange = (e) => {
-    //     this.setState({
-    //         email: (e.target.value)
-    //     })
-    // }
-
-    onPasswordChange = (e) => {
-        this.setState({
-            password: (e.target.value)
-        })
-    }
-
 
     render() {
         return (
@@ -69,27 +44,23 @@ export default class Biz extends React.Component {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="exampleUrl">Facebook URL</Label>
-                                <Input type="text" name="email" id="exampleEmail" placeholder="Paste your business Facebook URL here" value={this.props.facebookUrl} onChange={this.props.onFacebookUrlChange} />
+                                <Input type="text" name="fbUrl" id="exampleFbUrl" placeholder="Paste your business Facebook URL here" value={this.props.facebookUrl} onChange={this.props.onFacebookUrlChange} />
                             </FormGroup>
-
+                            <FormGroup>
+                                <Label for="exampleUrl">Company Name</Label>
+                                <Input type="text" name="companyName" id="exampleCompanyName" placeholder="Company name" value={this.props.companyName} onChange={this.props.onCompanyNameChange} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="exampleUrl">Company Website</Label>
+                                <Input type="text" name="companyWebsite" id="exampleCompanyWebsite" placeholder="Company website" value={this.props.companyWebsite} onChange={this.props.onCompanyWebsiteChange} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="exampleUrl">Yelp review URL</Label>
+                                <Input type="text" name="companyReview" id="exampleCompanyReview" placeholder="Yelp review URL" value={this.props.companyReview} onChange={this.props.onCompanyReviewChange} />
+                            </FormGroup>
                             <FormGroup>
                                 <Label for="examplePassword">Password</Label>
                                 <Input type="password" name="password" id="examplePassword" placeholder="Password" value={this.props.password} onChange={this.props.onPasswordChange} />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="exampleSelect">Select Approximate Time You Will Post Lunch Speicals</Label>
-                                <Input type="select" name="select" id="exampleSelect">
-                                    <option>8:00AM</option>
-                                    <option>8:30AM</option>
-                                    <option>9:00AM</option>
-                                    <option>9:30AM</option>
-                                    <option>10:00AM</option>
-                                    <option>10:30AM</option>
-                                    <option>11:00AM</option>
-                                    <option>11:30AM</option>
-                                    <option>12:00PM</option>
-                                    <option>12:30PM</option>
-                                </Input>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="exampleText">Any additional comments</Label>

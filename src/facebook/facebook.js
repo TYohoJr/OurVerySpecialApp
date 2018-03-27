@@ -2,9 +2,6 @@ import React from "react";
 import "./facebook.css"
 
 export default class Facebook extends React.Component {
-    constructor(props){
-        super(props);
-    }
     render() {        
         return (
             <div>

@@ -95,7 +95,7 @@ export default class Tabs extends React.Component {
                 <div className="table-container">
                   <thead>
                     <tr>
-                      {/* {foodButtons} */}
+                      {foodButtons}
                     </tr>
                   </thead>
                   <tbody>
