@@ -131,7 +131,7 @@ export default class Tabs extends React.Component {
           <TabPane tabId="3">
             <Row>
               <Col sm="12">
-                <MooseTabs id="MooseTabs-div" addRemoveItem={this.props.addRemoveItem} userProfile={this.props.userProfile} />
+                <MooseTabs id="MooseTabs-div" addRemoveItem={this.props.addRemoveItem} userProfile={this.props.userProfile} username={this.props.username} number={this.props.number}/>
               </Col>
             </Row>
           </TabPane>

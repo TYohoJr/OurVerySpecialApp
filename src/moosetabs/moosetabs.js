@@ -254,7 +254,7 @@ export default class MooseTabs extends React.Component {
                                     <div className="moosetabs-text">
                                         <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
-                                            <Userlist userProfile={this.props.userProfile} />
+                                            <Userlist userProfile={this.props.userProfile} username={this.props.username} number={this.props.number} />
                                         </CardText>
                                     </div>
                                 </Card>
@@ -283,7 +283,7 @@ export default class MooseTabs extends React.Component {
                                     <div className="moosetabs-text">
                                         <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
-                                            <Userlist userProfile={this.props.userProfile} />
+                                            <Userlist userProfile={this.props.userProfile} username={this.props.username} number={this.props.number} />
                                         </CardText>
                                     </div>
                                 </Card>
@@ -316,7 +316,7 @@ export default class MooseTabs extends React.Component {
                                     <div className="moosetabs-text">
                                         <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
-                                            <Userlist userProfile={this.props.userProfile} />
+                                            <Userlist userProfile={this.props.userProfile} username={this.props.username} number={this.props.number} />
                                         </CardText>
                                     </div>
                                 </Card>
@@ -347,7 +347,7 @@ export default class MooseTabs extends React.Component {
                                     <div className="moosetabs-text">
                                         <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
-                                            <Userlist userProfile={this.props.userProfile} />
+                                            <Userlist userProfile={this.props.userProfile} username={this.props.username} number={this.props.number} />
                                         </CardText>
                                     </div>
                                 </Card>
@@ -379,7 +379,7 @@ export default class MooseTabs extends React.Component {
                                     <div className="moosetabs-text">
                                         <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
-                                            <Userlist userProfile={this.props.userProfile} />
+                                            <Userlist userProfile={this.props.userProfile} username={this.props.username} number={this.props.number} />
                                         </CardText>
                                     </div>
                                 </Card>
@@ -412,7 +412,7 @@ export default class MooseTabs extends React.Component {
                                     <div className="moosetabs-text">
                                         <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
-                                            <Userlist userProfile={this.props.userProfile} />
+                                            <Userlist userProfile={this.props.userProfile} username={this.props.username} number={this.props.number} />
                                         </CardText>
                                     </div>
                                 </Card>
@@ -445,7 +445,7 @@ export default class MooseTabs extends React.Component {
                                     <div className="moosetabs-text">
                                         <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
-                                            <Userlist userProfile={this.props.userProfile} />
+                                            <Userlist userProfile={this.props.userProfile} username={this.props.username} number={this.props.number} />
                                         </CardText>
                                     </div>
                                 </Card>
@@ -476,7 +476,7 @@ export default class MooseTabs extends React.Component {
                                     <div className="moosetabs-text">
                                         <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
-                                            <Userlist userProfile={this.props.userProfile} />
+                                            <Userlist userProfile={this.props.userProfile} username={this.props.username} number={this.props.number} />
                                         </CardText>
                                     </div>
                                 </Card>
@@ -507,7 +507,7 @@ export default class MooseTabs extends React.Component {
                                     <div className="moosetabs-text">
                                         <CardTitle>Your Saved Specials<br /> <div className="checkboxtext">{checkboxText}</div></CardTitle>
                                         <CardText>
-                                            <Userlist userProfile={this.props.userProfile} />
+                                            <Userlist userProfile={this.props.userProfile} username={this.props.username} number={this.props.number} />
                                         </CardText>
                                     </div>
                                 </Card>
