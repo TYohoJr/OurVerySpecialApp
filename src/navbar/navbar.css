@@ -14,7 +14,6 @@
     background-size: cover;
     margin:10px;
     margin-bottom:50px;
-    
 }
 
 #dropdown-menu {
@@ -35,7 +34,6 @@
 
 #navbar-dropdown:hover {
     font-style: normal!important;
-    
 }
 
 .dropdown-toggle.show {
@@ -54,5 +52,3 @@
     color: #ffffff!important;
     margin-right: 10px;
 }
-
-

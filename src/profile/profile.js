@@ -30,7 +30,7 @@ export default class Profile extends Component {
 
         return (
             <div id="profile-main">
-                <Button id="show-profile-button" onClick={this.toggle}><img className="tncBtns" src={require("../project-images/profile.png")} alt="profile"/></Button>
+                <Button id="show-profile-button" onClick={this.toggle}><img className="tncBtns" src={require("../project-images/profile.png")} alt="profile" /></Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader >Your Profile</ModalHeader>
                     <ModalBody>

@@ -33,10 +33,9 @@ export default class ListArray extends React.Component {
 
     render() {
         let token = localStorage.getItem("token")
-        if(token){
-            checkBox = <input type="checkbox" onChange={this.runListItem}/>
+        if (token) {
+            checkBox = <input type="checkbox" onChange={this.runListItem} />
         }
-
         return (
             <div>
                 <br />

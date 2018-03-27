@@ -56,13 +56,6 @@
 .profile-buttons:hover{
   background-color: rgba(15, 61, 121, 0.8);
 }
-  
-/* @media all and (max-width:30em){
-  #stop-sms{
-    display:block;
-    margin:0.2em auto;  
-  }
-} */
 
 input {
   box-shadow: .5px .5px 8px rgb(0, 0, 0)

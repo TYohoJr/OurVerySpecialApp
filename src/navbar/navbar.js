@@ -43,10 +43,10 @@ export default class Navbar2 extends React.Component {
     let token = localStorage.getItem("token");
     if (token) {
       showProfile =
-        <Profile stopSms={this.props.stopSms} userProfile={this.props.userProfile} testSms={this.props.testSms}/>
+        <Profile stopSms={this.props.stopSms} userProfile={this.props.userProfile} testSms={this.props.testSms} />
     } else {
       showProfile =
-        <Popover1 stopSms={this.props.stopSms} userProfile={this.props.userProfile} testSms={this.props.testSms}/>
+        <Popover1 stopSms={this.props.stopSms} userProfile={this.props.userProfile} testSms={this.props.testSms} />
     }
 
     return (
@@ -56,9 +56,8 @@ export default class Navbar2 extends React.Component {
             {showProfile}
           </div>
           <div id="welcome-logo">
-            {/* <img src={require("../project-images/background3.png")} className="App-logo" alt="logo" /><br /> */}
           </div>
-         <NavbarToggler onClick={this.toggle} number={this.props.number} />
+          <NavbarToggler onClick={this.toggle} number={this.props.number} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav id="navbar-buttons" className="ml-auto" navbar>
               <div>
@@ -76,10 +75,10 @@ export default class Navbar2 extends React.Component {
                       <Signup />
                     </DropdownItem>
                     <DropdownItem>
-                      <Biz bizSignUp={this.props.bizSignUp} onUserChange={this.props.onUserChange} onPasswordChange={this.props.onPasswordChange} 
-                      onFacebookUrlChange={this.props.onFacebookUrlChange} onCommentsChange={this.props.onCommentsChange} 
-                      onEmailChange={this.props.onEmailChange} onCompanyNameChange={this.props.onCompanyNameChange} onCompanyWebsiteChange={this.props.onCompanyWebsiteChange}
-                      onCompanyReviewChange={this.props.onCompanyReviewChange}/>
+                      <Biz bizSignUp={this.props.bizSignUp} onUserChange={this.props.onUserChange} onPasswordChange={this.props.onPasswordChange}
+                        onFacebookUrlChange={this.props.onFacebookUrlChange} onCommentsChange={this.props.onCommentsChange}
+                        onEmailChange={this.props.onEmailChange} onCompanyNameChange={this.props.onCompanyNameChange} onCompanyWebsiteChange={this.props.onCompanyWebsiteChange}
+                        onCompanyReviewChange={this.props.onCompanyReviewChange} />
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>

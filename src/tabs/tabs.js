@@ -92,17 +92,17 @@ export default class Tabs extends React.Component {
             <Row>
               <Col sm="12">
                 <Table className="table1">
-                <div className="table-container">
-                  <thead>
-                    <tr>
-                      {foodButtons}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="facbook-plugins-div">
-                      {facebookFoodDiv}
-                    </tr>
-                  </tbody>
+                  <div className="table-container">
+                    <thead>
+                      <tr>
+                        {foodButtons}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="facbook-plugins-div">
+                        {facebookFoodDiv}
+                      </tr>
+                    </tbody>
                   </div>
                 </Table>
               </Col>
@@ -112,17 +112,17 @@ export default class Tabs extends React.Component {
             <Row>
               <Col sm="12">
                 <Table>
-                <div className="table-container">
-                  <thead>
-                    <tr>
-                      {musicButtons}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="facbook-plugins-div">
-                      {facebookMusicDiv}
-                    </tr>
-                  </tbody>
+                  <div className="table-container">
+                    <thead>
+                      <tr>
+                        {musicButtons}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="facbook-plugins-div">
+                        {facebookMusicDiv}
+                      </tr>
+                    </tbody>
                   </div>
                 </Table>
               </Col>

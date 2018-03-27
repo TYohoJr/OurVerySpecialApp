@@ -41,24 +41,24 @@ export default class App extends Component {
         everyDay: [],
       },
       places: [],
-      music:[]
+      music: []
     }
   }
 
-  componentDidMount(){
-    
-    axios.get("/getData").then((result)=>{
-      
+  componentDidMount() {
+
+    axios.get("/getData").then((result) => {
+
       this.setState({
-        places:result.data.foodData.places,
-        music:result.data.musicData.music
+        places: result.data.foodData.places,
+        music: result.data.musicData.music
       })
     })
   }
 
   bizSignUp() {
-    return new Promise ((resolve, reject)=>{
-      axios.post("/signUpBiz", { email: this.state.email, password: this.state.password, comments: this.state.comments, facebookUrl: this.state.facebookUrl, companyName:this.state.companyName, companyReview:this.state.companyReview, companyWebsite:this.state.companyWebsite }).then((result) => {
+    return new Promise((resolve, reject) => {
+      axios.post("/signUpBiz", { email: this.state.email, password: this.state.password, comments: this.state.comments, facebookUrl: this.state.facebookUrl, companyName: this.state.companyName, companyReview: this.state.companyReview, companyWebsite: this.state.companyWebsite }).then((result) => {
         if (result.data.message === 'Business sign up was successfull!') {
           alert(result.data.message)
           resolve();
