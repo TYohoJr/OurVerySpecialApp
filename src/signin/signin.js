@@ -30,7 +30,7 @@ export default class Signin extends React.Component {
                         </div>
                     </ModalBody>
                     <ModalFooter className="modal-parts">
-                        <Button color="dark" onClick={this.props.signIn}>Log In</Button>{' '}
+                        <Button color="primary" onClick={this.props.signIn}>Log In</Button>{' '}
                     </ModalFooter>
                 </Modal>
                 <br />

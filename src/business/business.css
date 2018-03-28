@@ -4,6 +4,10 @@
     box-shadow: 1px 1px 5px rgb(0, 0, 0)
 }
 
+#businessSignUp:hover {
+    background-color: #134e8a;
+}
+
 .modal.show {
     background-color: rgba(0, 0, 0, 0.548)
 }

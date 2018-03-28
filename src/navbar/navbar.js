@@ -4,10 +4,10 @@ import {
   Navbar,
   NavbarToggler,
   Nav,
+  Button,
   UncontrolledDropdown,
   DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  DropdownMenu
 } from 'reactstrap';
 import Signin from "../signin/signin.js";
 import Biz from "../business/business.js";
@@ -66,24 +66,24 @@ export default class Navbar2 extends React.Component {
                     Log In / Sign Up
                 </DropdownToggle>
                   <DropdownMenu id="dropdown-menu">
-                    <div className="dropdown-item">
+                    <div className='item'>
                       <Signin sendSms={this.props.sendSms} signIn={this.props.signIn} onPasswordChange={this.props.onPasswordChange}
                         onUserChange={this.props.onUserChange} username={this.props.username} password={this.props.password}
                         toggle={this.props.toggle} modal={this.props.modal} stopSms={this.props.stopSms} />
                     </div>
-                    <DropdownItem>
+                    <div className="item">
                       <Signup />
-                    </DropdownItem>
-                    <DropdownItem>
+                      </div>
+                      <div className="item">
                       <Biz bizSignUp={this.props.bizSignUp} onUserChange={this.props.onUserChange} onPasswordChange={this.props.onPasswordChange}
                         onFacebookUrlChange={this.props.onFacebookUrlChange} onCommentsChange={this.props.onCommentsChange}
                         onEmailChange={this.props.onEmailChange} onCompanyNameChange={this.props.onCompanyNameChange} onCompanyWebsiteChange={this.props.onCompanyWebsiteChange}
                         onCompanyReviewChange={this.props.onCompanyReviewChange} />
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                      <button onClick={this.logOut}>Log Out</button>
-                    </DropdownItem>
+                    </div>
+                    {/* <DropdownItem divider /> */}
+                    <div className="item">
+                      <Button id='logout' onClick={this.logOut}>Log Out</Button>
+                    </div>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </div>

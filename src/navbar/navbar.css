@@ -13,7 +13,7 @@
     background-position-x: center;
     background-size: cover;
     margin:10px;
-    margin-bottom:50px;
+    margin-bottom:40px;
 }
 
 #dropdown-menu {
@@ -24,6 +24,10 @@
     background-color: #494949!important;
     width:191px;
     border:solid black 2px;
+}
+
+#navbar-dropdown:hover {
+    background-color: #35505c!important;
 }
 
 #navbar-dropdown {
@@ -51,4 +55,22 @@
     background-color:#343a40!important;
     color: #ffffff!important;
     margin-right: 10px;
+}
+
+.item {
+    margin-left:10px;
+    margin-bottom:10px;
+    
+}
+
+#logout {
+    background-color: #9c1e1e;
+    border: none;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    color:white;
+    margin-top: 15px;
+}
+
+#logout:hover {
+    background-color: #8a1919;
 }

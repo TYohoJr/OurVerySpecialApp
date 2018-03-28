@@ -63,13 +63,13 @@ export default class Signup extends React.Component {
             <div>
                 <Button id="signup-button" color="danger" onClick={this.toggle}>Sign Up</Button>
                 <Modal id="signUpModal" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader className="modal-parts" toggle={this.toggle}>Sign Up Below</ModalHeader>
+                    <ModalHeader id='header' className="modal-parts" toggle={this.toggle}>Sign Up Below</ModalHeader>
                     <ModalBody className="modal-parts">
                         <div>
                             <p>Username:</p>
                             <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onUserChange} />
                             <br /><br />
-                            <p>Password:</p>
+                            <p>Create Password:</p>
                             <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onPasswordChange} />
                             <br /><br />
                             <p>Phone Number:</p>
@@ -77,7 +77,7 @@ export default class Signup extends React.Component {
                         </div>
                     </ModalBody>
                     <ModalFooter className="modal-parts">
-                        <Button color="dark" onClick={this.signUp}>Sign Up</Button>{' '}
+                        <Button color="primary" onClick={this.signUp}>Sign Up</Button>{' '}
                     </ModalFooter>
                 </Modal>
             </div>

@@ -40,16 +40,12 @@ export default class Biz extends React.Component {
                     <ModalBody className='businessModal'>
                         <Form>
                             <FormGroup>
-                                <Label for="exampleEmail">Email</Label>
-                                <Input type="email" name="email" id="exampleEmail" placeholder="Must be a valid email" value={this.props.email} onChange={this.props.onEmailChange} />
+                                <Label for="exampleUrl">Company Name</Label>
+                                <Input type="text" name="companyName" id="exampleCompanyName" placeholder="Company name" value={this.props.companyName} onChange={this.props.onCompanyNameChange} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="exampleUrl">Facebook URL</Label>
                                 <Input type="text" name="fbUrl" id="exampleFbUrl" placeholder="Paste your business Facebook URL here" value={this.props.facebookUrl} onChange={this.props.onFacebookUrlChange} />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="exampleUrl">Company Name</Label>
-                                <Input type="text" name="companyName" id="exampleCompanyName" placeholder="Company name" value={this.props.companyName} onChange={this.props.onCompanyNameChange} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="exampleUrl">Company Website</Label>
@@ -60,7 +56,11 @@ export default class Biz extends React.Component {
                                 <Input type="text" name="companyReview" id="exampleCompanyReview" placeholder="Yelp review URL" value={this.props.companyReview} onChange={this.props.onCompanyReviewChange} />
                             </FormGroup>
                             <FormGroup>
-                                <Label for="examplePassword">Password</Label>
+                                <Label for="exampleEmail">Email</Label>
+                                <Input type="email" name="email" id="exampleEmail" placeholder="Must be a valid email" value={this.props.email} onChange={this.props.onEmailChange} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="examplePassword">Create Password</Label>
                                 <Input type="password" name="password" id="examplePassword" placeholder="Password" value={this.props.password} onChange={this.props.onPasswordChange} />
                             </FormGroup>
                             <FormGroup>
