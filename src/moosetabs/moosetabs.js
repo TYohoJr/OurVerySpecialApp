@@ -117,7 +117,7 @@ var sunday = [
     <div className='sun'>Johnny Carino's: Happy Hour 3pm to 5pm and 8pm to Close</div>,
 ]
 
-var checkboxText
+var checkboxText;
 
 export default class MooseTabs extends React.Component {
     constructor(props) {
@@ -144,7 +144,6 @@ export default class MooseTabs extends React.Component {
         } else {
             checkboxText = null
         }
-
 
         return (
             <div id="moosetabs-div">

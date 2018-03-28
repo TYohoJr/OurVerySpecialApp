@@ -3,7 +3,6 @@ import TextList from "../textlist/textlist.js";
 import "./userlist.css";
 
 export default class Userlist extends Component {
-
     render() {
         if (this.props.userProfile.everyDay.length) {
             var everyDaySpecialsList = this.props.userProfile.everyDay.map((item, index) => {

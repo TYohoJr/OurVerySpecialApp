@@ -57,7 +57,6 @@ export default class Tabs extends React.Component {
         </th>
       )
     });
-    console.log(facebookFoodDiv)
 
     return (
       <div>

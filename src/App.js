@@ -46,9 +46,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-
     axios.get("/getData").then((result) => {
-
       this.setState({
         places: result.data.foodData.places,
         music: result.data.musicData.music
@@ -169,7 +167,6 @@ export default class App extends Component {
   }
 
   render() {
-
     window.onbeforeunload = function (e) {
       window.onunload = function () {
         window.localStorage.clear();
@@ -200,9 +197,9 @@ export default class App extends Component {
           subscribeToPlace={this.subscribeToPlace}
           addRemoveItem={this.addRemoveItem}
           music={this.state.music}
-          userProfile={this.state.userProfile} 
+          userProfile={this.state.userProfile}
           username={this.state.username}
-          number={this.state.userProfile.number}/>
+          number={this.state.userProfile.number} />
       </div>
     );
   }
