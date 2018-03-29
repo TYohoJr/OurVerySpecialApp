@@ -100,7 +100,8 @@ export default class App extends Component {
 
   testSms() {
     axios.post("/testText", { username: this.state.username, number: this.state.userProfile.number, token: localStorage.getItem("token") }).then((result) => {
-      alert("Test text sent!");
+      alert(result.data.message);
+
     })
   }
 
