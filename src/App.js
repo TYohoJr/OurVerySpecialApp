@@ -110,6 +110,7 @@ export default class App extends Component {
       this.setState({
         userProfile: result.data.user
       })
+      alert(result.data.message);
     })
   }
 
