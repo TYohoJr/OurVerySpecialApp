@@ -14,6 +14,7 @@ export default class TextList extends React.Component {
             return `"${item.props.children.props.children}"\n`
         })
         axios.post("/textList", { username: this.props.username, list: list, number: this.props.number, token: localStorage.getItem("token") }).then((result) => {
+            alert("Your list has been sent!");
         })
     }
     render() {
